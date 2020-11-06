@@ -2,7 +2,7 @@ var nameDepartment = sessionStorage.getItem("nameDepartment");
 document.getElementById('main__title').innerHTML = "Cifras Generales Contratación "+String(nameDepartment);
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrl = 'https://pruebapacos.azurewebsites.net/api/secop/departments/'+String(nameDepartment)
+    targetUrl = 'https://pruebapacos-apim.azure-api.net/pruebapacos/secop/departments/'+String(nameDepartment)
 
 var completeURL = proxyUrl+targetUrl;
 
@@ -105,7 +105,7 @@ function areaAmount(newData) {
 var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
 
 
-fetch(completeURL)
+fetch(targetUrl)
 .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
 .then((data) => {
 
