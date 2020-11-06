@@ -1,0 +1,131 @@
+* {
+    margin: 10;
+    padding: 10;
+    box-sizing: border-box;
+}
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+    // Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) //
+.sticky + .content {
+    padding-top: 102px;
+} */
+
+body {
+    flex-flow: column;
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    height: 1400px;
+}
+
+.header {
+    background-color: #00416d;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__img {
+    height: 80px;
+}
+
+.header__menu {
+    margin-right: 30px;
+}
+
+.header__menu ul {
+    display: none;
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    width: 150px;
+    text-align: right;
+    margin: 0px 0px 0px -14px;
+}
+
+.header__menu:hover ul, ul:hover {
+    display: block;
+}
+
+.header__menu li {
+    margin: 0px 0px;
+}
+
+.header__menu li a{
+    color: black;
+    text-decoration: none;
+}
+
+.header__menu li a:hover {
+    text-decoration: underline;
+}
+
+.header__menu--profile {
+    margin-right: 8px;
+    margin-top: 12px;
+    display: flex;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    margin-bottom: 80px;;
+}
+
+.main__title {
+    color: #1f3c88;
+    font-family: 'Mulish', sans-serif;
+    font-size: 70px;
+    padding: 0;
+    margin: 0;
+    margin-top: 80px;
+}
+
+.figures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.figures__img {
+    border-radius: 2px solid;
+    width: 45%;
+    height: 45%;
+}
+
+.footer {
+    background-color: salmon;
+    height: 6rem;
+    margin-top: auto;
+}
+
+.footer {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 170px;
+    width: 100%;
+}
+
+.footer a {
+    color: #00416d;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    margin-bottom: 80px;;
+}
