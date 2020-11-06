@@ -30,8 +30,8 @@ fetch(completeURL)
       })
       plot(data);}
       ))
-
-
+ 
+// test
 // const $container__dynamic = document.querySelector('.container__dynamic')
 
 // function renderInfo(Cantidad2020) {
