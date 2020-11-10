@@ -66,13 +66,13 @@ a:link {
 }
 
 .main__title {
-    color: #1f3c88;
+    color: #00a5d1;
     font-size: 60px;
     align-items: center;
 }
 
 .main__subtitle {
-    color: #1f3c88;
+    color: #00a5d1;
     font-size: 22px;
     align-items: center;
 }
@@ -115,6 +115,8 @@ a:link {
     transform-origin: center left;
     position: relative;
     border-color: black;
+    box-shadow: 5px 5px 5px #bbbfca;
+    opacity: 0.8;
 }
 .carousel-item:hover ~ .carousel-item {
     transform: translate3d(100px, 0, 0);
@@ -132,7 +134,7 @@ a:link {
     object-fit: cover;
 }
 .carousel-item__details {
-    background: linear-gradient(to top, rgba(255,255,255,0.3)0%, rgba(0, 0, 0, 0)100%);
+    background: linear-gradient(to top, rgba(211,211,2211,0.8)0%, rgba(0, 0, 0, 0)100%);
     font-size: 13px;
     opacity: 0;
     transition: 100ms opacity;
@@ -156,5 +158,5 @@ a:link {
 }
 .carousel-item__details:hover {
         opacity: 1;
-        color: white;
+        color: gray;
 }
