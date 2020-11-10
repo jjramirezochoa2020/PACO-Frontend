@@ -114,12 +114,13 @@ a:link {
     transition: 100ms all;
     transform-origin: center left;
     position: relative;
+    border-color: black;
 }
 .carousel-item:hover ~ .carousel-item {
     transform: translate3d(100px, 0, 0);
 }
 .carousel__container:hover .carousel-item {
-    opacity: 0.3;
+    opacity: 1;
 }
 .carousel__container:hover .carousel-item:hover {
     transform: scale(1.5);
@@ -131,7 +132,7 @@ a:link {
     object-fit: cover;
 }
 .carousel-item__details {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9)0%, rgba(0, 0, 0, 0)100%);
+    background: linear-gradient(to top, rgba(255,255,255,0.3)0%, rgba(0, 0, 0, 0)100%);
     font-size: 13px;
     opacity: 0;
     transition: 100ms opacity;
@@ -147,7 +148,7 @@ a:link {
     flex-direction: column;
 }
 .carousel-item__details--title {
-    color: white;
+    color: black;
 }
 
 .carousel-item__details p{
