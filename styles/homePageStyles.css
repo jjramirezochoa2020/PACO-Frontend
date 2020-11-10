@@ -96,6 +96,7 @@ a:link {
     padding: 30px;
     position: relative;
     margin-left: 10%;
+    margin-right: 10%;
 }
 .carousel__container {
     white-space: nowrap;
