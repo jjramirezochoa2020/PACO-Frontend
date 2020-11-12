@@ -18,4 +18,4 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-            az storage blob upload-batch --account-name paco7input7data -d '$web' -s .
+            az storage blob upload-batch --account-name storage7paco -d '$web' -s .
