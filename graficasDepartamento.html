@@ -14,7 +14,28 @@
     <title>Document</title>
 </head>
 <style>
-    
+    .table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .table td, .table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .table tr:nth-child(even){background-color: #f2f2f2;}
+
+    .table tr:hover {background-color: #ddd;}
+
+    .table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #00a5d1;
+        color: white;
+    }
 
 </style>
 
@@ -90,6 +111,45 @@
         <div id="mySixthChart"></div>
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
         </div>
+    </div> 
+
+    <div class="container">
+        <h5 color='#00416d'>Lista de los Contratos de mayor cuantía</h5>
+        <hr>
+        <table class="table" id="contracts">
+            <tr>
+              <th>Referencia</th>
+              <th>Contratista</th>
+              <th>Entidad</th>
+              <th>Valor</th>
+              <th>URL</th>
+            </tr>
+            
+          </table>
+    </div> 
+
+    <div class="container">
+        <h5 color='#00416d'>Lista de los Contratistas con contratos de mayor cuantía</h5>
+        <hr>
+        <table class="table" id="contractors1">
+            <tr>
+              <th style="width: 60%;">Contratista</th>
+              <th style="width: 40%;">Cantidad de contratos</th>
+            </tr>
+            
+          </table>
+    </div> 
+
+    <div class="container">
+        <h5 color='#00416d'>Lista de los Contratistas con mayor cantidad de contratos</h5>
+        <hr>
+        <table class="table" id="contractors2">
+            <tr>
+              <th style="width: 60%;">Contratista</th>
+              <th style="width: 40%;">Cuantia Total de los Contratos</th>
+            </tr>
+        
+          </table>
     </div> 
 
     <footer class="footer">
