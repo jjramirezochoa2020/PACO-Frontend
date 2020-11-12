@@ -2,9 +2,16 @@ var nameDepartment = sessionStorage.getItem("nameDepartment");
 document.getElementById('main__title').innerHTML = "Cifras Generales Contratación "+String(nameDepartment);
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrl = 'https://pruebapacos-apim.azure-api.net/pruebapacos/secop/departments/'+String(nameDepartment)
+    targetUrl = 'https://apim-paco.azure-api.net/paco/secop/departments/'+String(nameDepartment),
+    targetUrl2 = 'https://apim-paco.azure-api.net/paco/secop/contract/'+String(nameDepartment)+'?limit=5',
+    targetUrl3 = 'https://apim-paco.azure-api.net/paco/secop/contractor/'+String(nameDepartment)+'?limit=5&sort=count&order=desc',
+    targetUrl4 = 'https://apim-paco.azure-api.net/paco/secop/contractor/'+String(nameDepartment)+'?limit=5&sort=total&order=desc'
+
 
 var completeURL = proxyUrl+targetUrl;
+var completeURL2 = proxyUrl+targetUrl2;
+var completeURL3 = proxyUrl+targetUrl3;
+var completeURL4 = proxyUrl+targetUrl4;
 
 var formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -70,7 +77,7 @@ function plotAmount(newData) {
 function areaCount(newData) {
   Morris.Area.prototype.fillForSeries = function(i)  {
     var color;
-    return "10-#3b7078-#ffffff";
+    return "10-#00416d-#ffffff";
     }
 
   Morris.Area({
@@ -86,7 +93,7 @@ function areaCount(newData) {
 function areaAmount(newData) {
   Morris.Area.prototype.fillForSeries = function(i)  {
     var color;
-    return "10-#3b7078-#ffffff";
+    return "10-#00416d-#ffffff";
     }
 
   Morris.Area({
@@ -225,30 +232,46 @@ fetch(targetUrl)
     }
   });
 
+  fetch(targetUrl3)
+  .then((response) => response.json() 
+  .then((data) => { 
+    data.forEach(function(elementName) { 
+      $("<tr><td>" + elementName.contractor + "</td><td>" + elementName.count + "</td></tr>").appendTo("#contractors1")
+    })
+  }))
 
+  function moneyFormay(x) {
+    len = String(x).length;
+    var i;
+    var counter = 0;
+    partialString = "";
+    for (i=1; i<=len; i++) {
+      if (counter == 3) {
+        partialString = "."+String(x)[len-i];
+        counter = 0;
+      }
+      else {
+        partialString = String(x)[len-i]+partialString
+      }
+      counter = counter + 1;
+    }
+    return "$ "+partialString;
+  }
 
-  $("#botData1").on("click", function() {
-      console.log(Morris1);
-      var nuevaData = [
-        { year: '2016', value: 20 },
-        { year: '2017', value: 30 },
-        { year: '2018', value: 5 },
-        { year: '2019', value: 20 },
-        { year: '2020', value: 5 }
-      ];
+  fetch(targetUrl4)
+  .then((response) => response.json() 
+  .then((data) => { 
+    data.forEach(function(elementName) { 
+      $("<tr><td>" + elementName.contractor + "</td><td>" + elementName.total + "</td></tr>").appendTo("#contractors2")
+    })
+  }))
+ 
 
-      Morris1.setData(nuevaData);
-  })
-
-  $("#botData2").on("click", function() {
-    console.log(Morris2);
-    var nuevaData = [
-      { year: '2016', value: 20 },
-      { year: '2017', value: 30 },
-      { year: '2018', value: 5 },
-      { year: '2019', value: 20 },
-      { year: '2020', value: 5 }
-    ];
-
-      Morris2.setData(nuevaData);
-})
+  fetch(targetUrl2)
+  .then((response) => response.json() 
+  .then((data) => { 
+    data.forEach(function(elementName) { 
+      $("<tr><td>" + elementName.contractor_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td>" + elementName.value + "</td><td>" + elementName.url + "</td></tr>").appendTo("#contracts")
+    })
+  }))
+ 
