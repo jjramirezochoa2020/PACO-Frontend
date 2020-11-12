@@ -236,7 +236,7 @@ fetch(targetUrl)
   .then((response) => response.json() 
   .then((data) => { 
     data.forEach(function(elementName) { 
-      $("<tr><td>" + elementName.contractor + "</td><td>" + elementName.count + "</td></tr>").appendTo("#contractors1")
+      $("<tr><td>" + elementName.contractor + "</td><td style='text-align: center'>" + elementName.count + "</td></tr>").appendTo("#contractors1")
     })
   }))
 
@@ -262,7 +262,7 @@ fetch(targetUrl)
   .then((response) => response.json() 
   .then((data) => { 
     data.forEach(function(elementName) { 
-      $("<tr><td>" + elementName.contractor + "</td><td>" + elementName.total + "</td></tr>").appendTo("#contractors2")
+      $("<tr><td>" + elementName.contractor + "</td><td style='text-align: center'>" + elementName.total + "</td></tr>").appendTo("#contractors2")
     })
   }))
  
@@ -271,7 +271,7 @@ fetch(targetUrl)
   .then((response) => response.json() 
   .then((data) => { 
     data.forEach(function(elementName) { 
-      $("<tr><td>" + elementName.contractor_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td>" + elementName.value + "</td><td>" + elementName.url + "</td></tr>").appendTo("#contracts")
+      $("<tr><td>" + elementName.contractor_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td style='text-align: center'>" + elementName.value + "</td><td>" + elementName.url + "</td></tr>").appendTo("#contracts")
     })
   }))
  
