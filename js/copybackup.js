@@ -29,6 +29,57 @@ var formatter = new Intl.NumberFormat('en-US', {
 });
 
 
+function plotCount(newData) {
+
+  var Morris1 = new Morris.Line({
+      // ID of the element in which to draw the chart.
+      element: 'myFirstChart',
+      // Chart data records -- each entry in this array corresponds to a point on
+      // the chart.
+      data: newData,
+    //   data: [
+    //     { year: 2016, value: 20 },
+    //     { year: 2017, value: 10 },
+    //     { year: 2018, value: 5 },
+    //     { year: 2019, value: 5 },
+    //     { year: 2020, value: 20 }
+    //   ],
+      // The name of the data record attribute that contains x-values.
+      xkey: 'year',
+      // A list of names of data record attributes that contain y-values.
+      ykeys: ['count'],
+      // Labels for the ykeys -- will be displayed when you hover over the
+      // chart.
+      labels: ['Valor'],
+      resize: true,
+      lineColors: ['#C14D9F'],
+      smooth: false,
+    });
+}
+
+function plotAmount(newData) {
+
+  var Morris2 = new Morris.Line({
+    // ID of the element in which to draw the chart.
+    element: 'mySecondChart',
+    // Chart data records -- each entry in this array corresponds to a point on
+    // the chart.
+    data: newData,
+    // The name of the data record attribute that contains x-values.
+    xkey: 'year',
+    // A list of names of data record attributes that contain y-values.
+    ykeys: ['total'],
+    // Labels for the ykeys -- will be displayed when you hover over the
+    // chart.
+    yLabelFormat: function(y)  {
+      return formatter.format(y/1000000)+' Mill';
+    },
+    labels: ['Valor'],
+    resize: true,
+    lineColors: ['#2CB4AC'],
+  });
+}
+
 function areaCount(newData, elementName) {
   Morris.Area.prototype.fillForSeries = function(i)  {
     var color;
@@ -84,10 +135,10 @@ var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oc
   var Morris3 = Morris.Donut({
     element: 'myThirdChart',
     data: [
-      {value: 100, label: 'SECOP I'},
+      {value: 0, label: 'SECOP I'},
       {value: 0, label: 'SECOP II'},
     ],
-    colors: ['#d9def9', '#7a67d7'],
+    colors: ['#cc0e74', '#ffcbcb'],
     formatter: function (x) { return x}
   }).on('click', function(i, row){
     console.log(i, row);
@@ -96,7 +147,7 @@ var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oc
   var Morris4 = Morris.Donut({
     element: 'myForthChart',
     data: [
-      {value: 100, label: 'Ejecutado'},
+      {value: 0, label: 'Ejecutado'},
       {value: 0, label: 'Liquidado'},
       {value: 0, label: 'En Borrador'},
       {value: 0, label: 'Suspendido'},
@@ -111,7 +162,7 @@ var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oc
   var Morris5 = Morris.Donut({
     element: 'myFifthChart',
     data: [
-      {value: 100, label: 'Ejecutado'},
+      {value: 0, label: 'Ejecutado'},
       {value: 0, label: 'Liquidado'},
       {value: 0, label: 'En Borrador'},
       {value: 0, label: 'Suspendido'},
@@ -123,84 +174,24 @@ var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oc
     console.log(i, row);
   });
 
-  var Morris6 = Morris.Donut({
-    element: 'mySixthChart',
-    data: [
-      {value: 100, label: 'Ejecutado'},
-      {value: 0, label: 'Liquidado'},
-      {value: 0, label: 'En Borrador'},
-      {value: 0, label: 'Suspendido'},
-      {value: 0, label: 'Cancelado'},
-    ],
-    colors: ['#00aed1', '#08bbdc', '#45d9f0', '#79e1f1', '#a1ecfa'],
-    formatter: function (x) { return x}
-  }).on('click', function(i, row){
-    console.log(i, row);
-  });
-
-  var Morris7 = Morris.Donut({
-    element: 'mySeventhChart',
-    data: [
-      {value: 100, label: 'Ejecutado'},
-      {value: 0, label: 'Liquidado'},
-      {value: 0, label: 'En Borrador'},
-      {value: 0, label: 'Suspendido'},
-      {value: 0, label: 'Cancelado'},
-    ],
-    colors: ['#3866d6', '#477be6', '#5e94f8', '#77baff', '#9dcefd'],
-    formatter: function (x) { return x}
-  }).on('click', function(i, row){
-    console.log(i, row);
-  });
-
-  var Morris8 = Morris.Donut({
-    element: 'myEighthChart',
-    data: [
-      {value: 100, label: 'Ejecutado'},
-      {value: 0, label: 'Liquidado'},
-      {value: 0, label: 'En Borrador'},
-      {value: 0, label: 'Suspendido'},
-      {value: 0, label: 'Cancelado'},
-    ],
-    colors: ['#00aed1', '#08bbdc', '#45d9f0', '#79e1f1', '#a1ecfa'],
-    formatter: function (x) { return x}
-  }).on('click', function(i, row){
-    console.log(i, row);
-  });
-
-  var Morris9 = Morris.Donut({
-    element: 'myNinthChart',
-    data: [
-      {value: 100, label: 'Ejecutado'},
-      {value: 0, label: 'Liquidado'},
-      {value: 0, label: 'En Borrador'},
-      {value: 0, label: 'Suspendido'},
-      {value: 0, label: 'Cancelado'},
-    ],
-    colors: ['#3866d6', '#477be6', '#5e94f8', '#77baff', '#9dcefd'],
-    formatter: function (x) { return x}
-  }).on('click', function(i, row){
-    console.log(i, row);
-  });
-
-  var Morris10 = new Morris.Line({
+  var Morris6 = new Morris.Line({
     // ID of the element in which to draw the chart.
-    element: 'myTenthChart',
+    element: 'mySixthChart',
     // Chart data records -- each entry in this array corresponds to a point on
     // the chart.
     data: [
-      { month: '2020-01', value: 0, value2: 0, value3: 0 },
-      { month: '2020-02', value: 0, value2: 0, value3: 0 },
-      { month: '2020-03', value: 0, value2: 0, value3: 0 },
-      { month: '2020-04', value: 0, value2: 0, value3: 0 },
-      { month: '2020-05', value: 0, value2: 0, value3: 0 },
-      { month: '2020-06', value: 0, value2: 0, value3: 0 },
-      { month: '2020-07', value: 0, value2: 0, value3: 0 },
-      { month: '2020-08', value: 0, value2: 0, value3: 0 },
-      { month: '2020-09', value: 0, value2: 0, value3: 0 },
-      { month: '2020-10', value: 0, value2: 0, value3: 0 },
-      { month: '2020-11', value: 0, value2: 0, value3: 0 },
-      { month: '2020-12', value: 0, value2: 0, value3: 0 },
+      { month: '2020-01', value: 20, value2: 30, value3: 23 },
+      { month: '2020-02', value: 10, value2: 10, value3: 20 },
+      { month: '2020-03', value: 5, value2: 40, value3: 10 },
+      { month: '2020-04', value: 20, value2: 5, value3: 28 },
+      { month: '2020-05', value: 20, value2: 10, value3: 25 },
+      { month: '2020-06', value: 10, value2: 5, value3: 14 },
+      { month: '2020-07', value: 5, value2: 20, value3: 15 },
+      { month: '2020-08', value: 20, value2: 20, value3: 9 },
+      { month: '2020-09', value: 20, value2: 10, value3: 5 },
+      { month: '2020-10', value: 10, value2: 20, value3: 20 },
+      { month: '2020-11', value: 5, value2: 8, value3: 10 },
+      { month: '2020-12', value: 20, value2: 30, value3: 10 },
     ],
     // The name of the data record attribute that contains x-values.
     xkey: 'month',
@@ -237,9 +228,9 @@ var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oc
     return "$ "+partialString;
   }
 
-// var colorDonut1 = ['#d9def9', '#7a67d7'];
-// var colorDonut2 = ['#00aed1', '#08bbdc', '#45d9f0', '#79e1f1', '#a1ecfa'];
-// var colorDonut3 = ['#3866d6', '#477be6', '#5e94f8', '#77baff', '#9dcefd'];
+var colorDonut1 = ['#d9def9', '#7a67d7'];
+var colorDonut2 = ['#00aed1', '#08bbdc', '#45d9f0', '#79e1f1', '#a1ecfa'];
+var colorDonut3 = ['#3866d6', '#477be6', '#5e94f8', '#77baff', '#9dcefd'];
 
 initialDataDonut1 = [{value: 0, label: 'Ejecutado'}, {value: 0, label: 'Liquidado'}, {value: 0, label: 'En Borrador'}, {value: 0, label: 'Suspendido'}, {value: 0, label: 'Cancelado'}]
 
@@ -269,25 +260,16 @@ fetch(targetUrlGlobalNumber)
     }
   ))
 
-
-  $("#main__button").click(function(ev) {
-    ev.preventDefault();
-    year = document.getElementById("yearButton__input").value;
-    fetch(targetUrlSECOP+"?year="+String(parseInt(year)-1))
-    .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
-    .then((data) => {
-          var newData = [];
-          data.forEach(function(element) {
-            newData.push({value: element.count, label: element.data_base});
-          })
-          Morris3.setData(newData);
-        }
-      ))
-
-    fetch(targetUrlSECOP+"?year="+String(parseInt(year)-1))
-
-  })
-
+// fetch(targetUrlSECOP)
+// .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+// .then((data) => {
+//       var newData = [];
+//       data.forEach(function(element) {
+//         newData.push({value: element.count, label: element.data_base});
+//       })
+//       Morris3.setData(newData);
+//     }
+//   ))
 
   // fetch(targetUrlContracts)
   // .then((response) => response.json() 
