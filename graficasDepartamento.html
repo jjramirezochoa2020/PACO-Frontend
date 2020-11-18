@@ -37,6 +37,58 @@
         color: white;
     }
 
+    .yearButton {
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        margin-left: 35%;
+        width: 30%;
+    }
+
+    .yearButton__input {
+        background-color: #f6f6f6;
+        border: 2px solid #1f3c88;
+        border-radius: 25px;
+        color: #1f3c88;
+        font-family: 'Mulish', sans-serif;
+        font-size: 16px;
+        height: 50px;
+        outline: none;
+        padding: 0px 20px;
+        width: 50%;
+    }
+
+    .main__button {
+        /* background-color: rgba(255, 255, 255, 0.1); */
+        background-color: #00416d;
+        /* border: none; */
+        border-radius: 25px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Mulish', sans-serif;
+        height: 50px;
+        letter-spacing: 1px;
+        /* margin-top: 50px;
+        margin-bottom: 20px; */
+        padding: 0px 20px;
+        outline: none;
+    }
+
+    .main__button:hover {
+        background: #3282b8 radial-gradient(circle, transparent 1%, #3282b8 1%) center/15000%;
+        outline: none;
+    }
+
+    .main__button:focus {
+        outline: none;
+    }
+
 </style>
 
 <body>
@@ -81,6 +133,19 @@
 
     </div>
 
+    <section class ="yearButton">
+        <select class ="yearButton__input" id="yearButton__input">
+            <option value="" disabled selected>Seleccione Año</option>
+            <option value="2020"> 2020 </option>  
+            <option value="2019"> 2019 </option>  
+            <option value="2018"> 2018 </option>
+            <option value="2017"> 2017 </option>
+            <option value="all"> Todos los años </option>
+        </select>  
+        <a href="./graficasDepartamento.html"><button class="main__button" id="main__button" type="button">Consultar</button>
+        </a> 
+    </section>
+
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -106,9 +171,43 @@
     </div>
 
     <div class="container">
-        <h5 color='#00416d'>Análisis de Contratación mensual desde 2018</h5>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 color='#00416d'>Modalidad Contratación en SECOP I</h5>
+                <hr>
+                <div id="mySixthChart"></div>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+            <div class="col-md-6">
+                <h5 color='#00416d'>Tipo de Procesos en SECOP I</h5>
+                <hr>
+                <div id="mySeventhChart"></div>
+                <!-- <button type="button" id="botData2" class="btn btn-primary">Cargar Data 2</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5 color='#00416d'>Modalidad Contratación en SECOP II</h5>
+                <hr>
+                <div id="myEighthChart"></div>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+            <div class="col-md-6">
+                <h5 color='#00416d'>Tipo de Procesos en SECOP II</h5>
+                <hr>
+                <div id="myNinthChart"></div>
+                <!-- <button type="button" id="botData2" class="btn btn-primary">Cargar Data 2</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h5 color='#00416d'>Análisis de Contratación mensual por año</h5>
         <hr>
-        <div id="mySixthChart"></div>
+        <div id="myTenthChart"></div>
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
         </div>
     </div> 
@@ -121,10 +220,9 @@
               <th style="text-align: center">Referencia</th>
               <th style="text-align: center">Contratista</th>
               <th style="text-align: center">Entidad</th>
-              <th style="text-align: center">Valor</th>
-              <th style="text-align: center">URL</th>
+              <th style="width: 16%; text-align: center">Valor</th>
+              <th style="width: 8%; text-align: center">URL</th>
             </tr>
-            
           </table>
     </div> 
 
