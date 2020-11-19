@@ -1,23 +1,31 @@
-var nameDepartment = sessionStorage.getItem("nameDepartment");
+nameDepartment = "";
 document.getElementById('main__title').innerHTML = "Cifras Generales Contratación "+String(nameDepartment);
 
 nameDepartment = nameDepartment.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/departments/'+String(nameDepartment),
-    targetUrlSECOP = 'https://api-paco.azure-api.net/fa-query-paco/secop/database/'+String(nameDepartment),
+    targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/departments/'
+    targetUrlSECOP = 'https://api-paco.azure-api.net/fa-query-paco/secop/database/'
     targetUrlStateSECOPI = "",
     targetUrlStateSECOPII = "",
-    targetUrlContracts = 'https://api-paco.azure-api.net/fa-query-paco/secop/contract/'+String(nameDepartment)+'?limit=5',
-    targetUrlCountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractor/'+String(nameDepartment)+'?limit=5&sort=count&order=desc',
-    targetUrlAmountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractor/'+String(nameDepartment)+'?limit=5&sort=total&order=desc'
+    targetUrlContracts = 'https://api-paco.azure-api.net/fa-query-paco/secop/contract/',
+    endUrlContracts = '?limit=5',
+    targetUrlCountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractor/',
+    endUrlCountContractors = '?limit=5&sort=count&order=desc',
+    targetUrlAmountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractor/',
+    endUrlAmountContractors = '?limit=5&sort=total&order=desc',
 
 
-var completeUrlGlobalNumber = proxyUrl+targetUrlGlobalNumber;
-var completeUrlSECOP = proxyUrl+targetUrlSECOP;
-var completeUrlContracts = proxyUrl+targetUrlContracts;
-var completeUrlCountContractors = proxyUrl+targetUrlCountContractors;
-var completeUrlAmountContractors = proxyUrl+targetUrlAmountContractors;
+function updateUrl(targetUrl, filter, endUrl) {
+  return targetUrl + String(filter) + endUrl
+}
+
+
+// var completeUrlGlobalNumber = proxyUrl+targetUrlGlobalNumber;
+// var completeUrlSECOP = proxyUrl+targetUrlSECOP;
+// var completeUrlContracts = proxyUrl+targetUrlContracts;
+// var completeUrlCountContractors = proxyUrl+targetUrlCountContractors;
+// var completeUrlAmountContractors = proxyUrl+targetUrlAmountContractors;
 
 var formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -28,43 +36,42 @@ var formatter = new Intl.NumberFormat('en-US', {
   maximumFractionDigits: 0,
 });
 
+Morris.Area.prototype.fillForSeries = function(i)  {
+  var color;
+  return "10-#c4e7f2-#ffffff";
+  }
 
-function areaCount(newData, elementName) {
-  Morris.Area.prototype.fillForSeries = function(i)  {
-    var color;
-    return "10-#c4e7f2-#ffffff";
-    }
+var Morris1 = Morris.Area({
+  element: 'myFirstChart',
+  data: [{year: '2017', count: 0},
+         {year: '2018', count: 0},
+         {year: '2019', count: 0},
+         {year: '2020', count: 0},
+        ],
+  xkey: 'year',
+  ykeys: ['count'],
+  labels: ['valor'],
+  lineWidth: 2,
+  resize: true,
+});
 
-  Morris.Area({
-    element: elementName,
-    data: newData,
-    xkey: 'year',
-    ykeys: ['count'],
-    labels: ['valor'],
-    lineWidth: 2,
-    resize: true,
-  });
-}
+  var Morris2 = Morris.Area({
+  element: 'mySecondChart',
+  data: [{year: '2017', count: 0},
+    {year: '2018', count: 0},
+    {year: '2019', count: 0},
+    {year: '2020', count: 0},
+   ],
+  xkey: 'year',
+  ykeys: ['total'],
+  labels: ['valor'],
+  yLabelFormat: function(y)  {
+    return formatter.format(y/1000000)+' Mill';
+  },
+  lineWidth: 2,
+  resize: true,
+});
 
-function areaAmount(newData, elementName) {
-  Morris.Area.prototype.fillForSeries = function(i)  {
-    var color;
-    return "10-#c4e7f2-#ffffff";
-    }
-
-  Morris.Area({
-    element: elementName,
-    data: newData,
-    xkey: 'year',
-    ykeys: ['total'],
-    labels: ['valor'],
-    yLabelFormat: function(y)  {
-      return formatter.format(y/1000000)+' Mill';
-    },
-    lineWidth: 2,
-    resize: true,
-  });
-}
 
 function donutPlot(newData, color, elementName) {
   Morris.Donut({
@@ -243,37 +250,70 @@ var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oc
 
 initialDataDonut1 = [{value: 0, label: 'Ejecutado'}, {value: 0, label: 'Liquidado'}, {value: 0, label: 'En Borrador'}, {value: 0, label: 'Suspendido'}, {value: 0, label: 'Cancelado'}]
 
-fetch(targetUrlGlobalNumber)
-.then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
-.then((data) => {
+// fetch(targetUrlGlobalNumber)
+// .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+// .then((data) => {
 
-  var data2 = jQuery.extend(true, {}, data);
-  amountData =[];
-  for(var i in data) {
-    amountData.push(data2[i]);
-  }
+//   var data2 = jQuery.extend(true, {}, data);
+//   amountData =[];
+//   for(var i in data) {
+//     amountData.push(data2[i]);
+//   }
 
-  data.forEach(element => {
-    element.year = String(element.year);
-    delete element['DEPARTAMENTO'];
-    delete element['total']
-    })
-    areaCount(data, 'myFirstChart');
+//   data.forEach(element => {
+//     element.year = String(element.year);
+//     delete element['DEPARTAMENTO'];
+//     delete element['total']
+//     })
+//     areaCount(data, 'myFirstChart');
 
-  amountData.forEach(element => {
-    element.year = String(element.year);
-    delete element['DEPARTAMENTO'];
-    delete element['count']
-    })
-    areaAmount(amountData, 'mySecondChart');
+//   amountData.forEach(element => {
+//     element.year = String(element.year);
+//     delete element['DEPARTAMENTO'];
+//     delete element['count']
+//     })
+//     areaAmount(amountData, 'mySecondChart');
+//     }
+//   ))
+
+$("#main_selector_button").click(function(ev) {
+  ev.preventDefault();
+  nameDepartment = document.getElementById("main__selector__input").value;
+  document.getElementById('main__title').innerHTML = "Cifras Generales Contratación "+String(nameDepartment);
+  nameDepartment = nameDepartment.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove accents
+  query = targetUrlGlobalNumber + nameDepartment;
+  fetch(query)
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+
+    var data2 = jQuery.extend(true, {}, data);
+    amountData =[];
+    for(var i in data) {
+      amountData.push(data2[i]);
     }
+
+    data.forEach(element => {
+      element.year = String(element.year);
+      delete element['DEPARTAMENTO'];
+      delete element['total']
+      })
+      Morris1.setData(data);
+
+    amountData.forEach(element => {
+      element.year = String(element.year);
+      delete element['DEPARTAMENTO'];
+      delete element['count']
+      })
+      Morris2.setData(amountData)
+      }
   ))
 
+})
 
   $("#main__button").click(function(ev) {
     ev.preventDefault();
     year = document.getElementById("yearButton__input").value;
-    fetch(targetUrlSECOP+"?year="+String(parseInt(year)-1))
+    fetch(targetUrlSECOP + nameDepartment + "?year="+String(parseInt(year)-1))
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
@@ -284,34 +324,35 @@ fetch(targetUrlGlobalNumber)
         }
       ))
 
-    fetch(targetUrlSECOP+"?year="+String(parseInt(year)-1))
+      fetch(targetUrlContracts + nameDepartment + "?year="+String(parseInt(year)-1) + '&limit=10')
+      .then((response) => response.json() 
+      .then((data) => {
+        $("#contracts").find("tr:not(:first)").remove();
+        data.forEach(function(elementName) { 
+          $("<tr><td>" + elementName.contractor_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td style='text-align: center'>" + moneyFormat(elementName.value) + "</td><td style='text-align: center'><a href="+ elementName.url +" target='blank'>link</a></td></tr>").appendTo("#contracts")
+        })
+      }))
+
+      
+      fetch(targetUrlCountContractors + nameDepartment + "?year="+String(parseInt(year)-1) + '&limit=10&sort=count&order=desc')
+      .then((response) => response.json() 
+      .then((data) => { 
+        $("#contractors1").find("tr:not(:first)").remove(); 
+        data.forEach(function(elementName) { 
+          $("<tr><td>" + elementName.contractor + "</td><td style='text-align: center'>" + elementName.count + "</td></tr>").appendTo("#contractors1")
+        })
+      }))
+
+      fetch(targetUrlAmountContractors + nameDepartment + "?year="+String(parseInt(year)-1) + '&limit=10&sort=total&order=desc')
+      .then((response) => response.json() 
+      .then((data) => {
+        $("#contractors2").find("tr:not(:first)").remove();  
+        data.forEach(function(elementName) { 
+          $("<tr><td>" + elementName.contractor + "</td><td style='text-align: center'>" + moneyFormat(elementName.total) + "</td></tr>").appendTo("#contractors2")
+        })
+      }))
 
   })
 
-
-  // fetch(targetUrlContracts)
-  // .then((response) => response.json() 
-  // .then((data) => { 
-  //   data.forEach(function(elementName) { 
-  //     $("<tr><td>" + elementName.contractor_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td style='text-align: center'>" + moneyFormat(elementName.value) + "</td><td style='text-align: center'><a href="+ elementName.url +" target='blank'>link</a></td></tr>").appendTo("#contracts")
-  //   })
-  // }))
-
-  // fetch(targetUrlCountContractors)
-  // .then((response) => response.json() 
-  // .then((data) => { 
-  //   data.forEach(function(elementName) { 
-  //     $("<tr><td>" + elementName.contractor + "</td><td style='text-align: center'>" + elementName.count + "</td></tr>").appendTo("#contractors1")
-  //   })
-  // }))
-
-  // fetch(targetUrlAmountContractors)
-  // .then((response) => response.json() 
-  // .then((data) => { 
-  //   data.forEach(function(elementName) { 
-  //     $("<tr><td>" + elementName.contractor + "</td><td style='text-align: center'>" + moneyFormat(elementName.total) + "</td></tr>").appendTo("#contractors2")
-  //   })
-  // }))
- 
   
  

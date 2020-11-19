@@ -14,80 +14,6 @@
     <title>Document</title>
 </head>
 <style>
-    .table {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    .table td, .table th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-
-    .table tr:nth-child(even){background-color: #f2f2f2;}
-
-    .table tr:hover {background-color: #ddd;}
-
-    .table th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #00a5d1;
-        color: white;
-    }
-
-    .yearButton {
-        height: 100px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 10px;
-        margin-bottom: 30px;
-        margin-left: 35%;
-        width: 30%;
-    }
-
-    .yearButton__input {
-        background-color: #f6f6f6;
-        border: 2px solid #1f3c88;
-        border-radius: 25px;
-        color: #1f3c88;
-        font-family: 'Mulish', sans-serif;
-        font-size: 16px;
-        height: 50px;
-        outline: none;
-        padding: 0px 20px;
-        width: 50%;
-    }
-
-    .main__button {
-        /* background-color: rgba(255, 255, 255, 0.1); */
-        background-color: #00416d;
-        /* border: none; */
-        border-radius: 25px;
-        color: white;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        font-family: 'Mulish', sans-serif;
-        height: 50px;
-        letter-spacing: 1px;
-        /* margin-top: 50px;
-        margin-bottom: 20px; */
-        padding: 0px 20px;
-        outline: none;
-    }
-
-    .main__button:hover {
-        background: #3282b8 radial-gradient(circle, transparent 1%, #3282b8 1%) center/15000%;
-        outline: none;
-    }
-
-    .main__button:focus {
-        outline: none;
-    }
 
 </style>
 
@@ -105,6 +31,46 @@
             </ul>
         </div>
     </header>
+
+    <section class ="main__selector">
+        <!-- <input class ="main__input" id="main__input" type = "text" placeholder = "Buscar ..."> -->
+        <select class ="main__selector__input" id="main__selector__input">
+            <option value="" disabled selected>Seleccione Departamento</option>
+            <option value="Amazonas "> Amazonas </option>  
+            <option value="Antioquia"> Antioquia </option>  
+            <option value="Arauca"> Arauca </option>  
+            <option value="Atlántico"> Atlántico </option>  
+            <option value="Bolívar"> Bolívar </option>  
+            <option value="Boyacá"> Boyacá </option>
+            <option value="Caldas"> Caldas </option>  
+            <option value="Caquetá"> Caquetá </option>  
+            <option value="Casanare"> Casanare </option>  
+            <option value="Cauca"> Cauca </option>  
+            <option value="Cesar"> Cesar </option>  
+            <option value="Chocó"> Chocó </option>
+            <option value="Córdoba"> Córdoba </option>  
+            <option value="Cundinamarca"> Cundinamarca </option>  
+            <option value="Guainía"> Guainía </option>  
+            <option value="Guaviare"> Guaviare </option>
+            <option value="Huila"> Huila </option>   
+            <option value="La Guajira"> La Guajira </option>  
+            <option value="Magdalena"> Magdalena </option>
+            <option value="Meta"> Meta </option>  
+            <option value="Nariño"> Nariño </option>  
+            <option value="Norte de Santander"> Norte De Santander </option>  
+            <option value="Putumayo"> Putumayo </option>  
+            <option value="Quindio"> Quindio </option>  
+            <option value="Risaralda"> Risaralda </option>
+            <option value="San Andrés, Providencia y Santa Catalina"> San Andrés, Providencia y Santa Catalina</option>  
+            <option value="Santander"> Santander </option>  
+            <option value="Sucre"> Sucre </option>  
+            <option value="Tolima"> Tolima </option>  
+            <option value="Valle del Cauca"> Valle del Cauca </option>  
+            <option value="Vaupés"> Vaupés </option>
+            <option value="Vichada"> Vichada </option>  
+        </select>  
+        <button class="main__selector__button" id="main_selector_button" type="button">Buscar</button>
+    </section>
     
     <section class="main">
         <h2 id="main__title" class="main__title">Cifras Generales Contratación</h2>
@@ -257,5 +223,19 @@
     </footer>
 
     <script src="./js/graficasDepartamento.js" charset="UTF-8"></script>
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
 </body>
 </html>
