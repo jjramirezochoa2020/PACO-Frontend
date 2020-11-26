@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+}
+
+.login {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 30px;
+    margin-bottom: 20%;
+    /* min-height: calc(100vh - 200px); */
+}
+
+.login__container {
+    background-color:#00416d;
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 68px 40px;
+    min-height: 800px;
+    width: 600px;
+    display: flex;
+    justify-content:  space-around;
+    flex-direction: column;
+}
+
+.login__container--form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__container--form label {
+    font-size: 14px;
+}
+
+.login__container--remember-me {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.login__container--remember-me a{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.login__container--remember-me a:hover {
+    color: white;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.login__container--social-media > div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.login__container--social-media > div > img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.login__container--register {
+    font-size: 14px;
+
+}
+
+.login__container--register a {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.login__container--register a:hover {
+    text-decoration: underline;
+}
+
+.input {
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid white;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    outline: none;
+}
+
+.inputFile {
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    outline: none;
+}
+
+.input_box {
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    height: 200px;
+    margin: 20px;
+    padding: 0px 20px;
+    outline: none;
+}
+
+::placeholder {
+    color: #7A93AC;
+    
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    margin-top: 80px;
+}
+
+.footer {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+.footer a {
+    color: #00416d;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 350px) {
+    .login__container {
+        background-color: transparent;
+        border: none;
+        padding: 30px;
+        width: 100%;
+    }
+    .footer {
+        padding: 0;
+        margin-top: 100px;
+    }
+}

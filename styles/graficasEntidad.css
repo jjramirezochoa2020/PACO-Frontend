@@ -110,7 +110,7 @@ body {
     height: 50px;
     outline: none;
     padding: 0px 20px;
-    width: 60%;
+    width: 90%;
 }
 
 /* selector button properties */
@@ -126,6 +126,7 @@ body {
     font-family: 'Mulish', sans-serif;
     height: 50px;
     letter-spacing: 1px;
+    margin-left: 5%;
     padding: 0px 50px;
     outline: none;
 }
