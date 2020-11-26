@@ -52,6 +52,7 @@ function plotCount(newData, elementName, color) {
         var month = months[new Date(x).getMonth()];
         return month;
       },
+      ymax: 1200,
     });
 
     
@@ -101,18 +102,18 @@ data2 = [
        ];
 
 data3 = [
-        { month: '2020-01', Ciudadano: 20, Entidad_Privada: 300, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-02', Ciudadano: 10, Entidad_Privada: 350, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-03', Ciudadano: 24, Entidad_Privada: 390, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-04', Ciudadano: 2, Entidad_Privada: 280, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-05', Ciudadano: 0, Entidad_Privada: 300, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-06', Ciudadano: 10, Entidad_Privada: 250, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-07', Ciudadano: 20, Entidad_Privada: 200, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-08', Ciudadano: 10, Entidad_Privada: 300, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-09', Ciudadano: 30, Entidad_Privada: 300, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-10', Ciudadano: 10, Entidad_Privada: 200, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-11', Ciudadano: 0, Entidad_Privada: 250, Entidad_Publica: 23 , Sociedad_civil: 20},
-        { month: '2020-12', Ciudadano: 10, Entidad_Privada: 300, Entidad_Publica: 23 , Sociedad_civil: 20},
+        { month: '2020-01', Ciudadano: 225, Entidad_Privada: 69, Entidad_Publica: 232 , Sociedad_civil: 59},
+        { month: '2020-02', Ciudadano: 301, Entidad_Privada: 119, Entidad_Publica: 369 , Sociedad_civil: 65},
+        { month: '2020-03', Ciudadano: 200, Entidad_Privada: 135, Entidad_Publica: 246 , Sociedad_civil: 54},
+        { month: '2020-04', Ciudadano: 448, Entidad_Privada: 136, Entidad_Publica: 157 , Sociedad_civil: 32},
+        { month: '2020-05', Ciudadano: 1026, Entidad_Privada: 286, Entidad_Publica: 115 , Sociedad_civil: 123},
+        { month: '2020-06', Ciudadano: 388, Entidad_Privada: 295, Entidad_Publica: 92 , Sociedad_civil: 77},
+        { month: '2020-07', Ciudadano: 395, Entidad_Privada: 282, Entidad_Publica: 389 , Sociedad_civil: 131},
+        { month: '2020-08', Ciudadano: 362, Entidad_Privada: 245, Entidad_Publica: 232 , Sociedad_civil: 96},
+        { month: '2020-09', Ciudadano: 374, Entidad_Privada: 253, Entidad_Publica: 253 , Sociedad_civil: 74},
+        { month: '2020-10', Ciudadano: 234, Entidad_Privada: 166, Entidad_Publica: 169 , Sociedad_civil: 80},
+        { month: '2020-11', Ciudadano: 0, Entidad_Privada: 0, Entidad_Publica: 0 , Sociedad_civil: 0},
+        { month: '2020-12', Ciudadano: 0, Entidad_Privada: 0, Entidad_Publica: 0 , Sociedad_civil: 0},
         ];
 
 

@@ -20,15 +20,15 @@ var config = {
                 294,
             ],
             backgroundColor: [
-                color(chartColors.red).alpha(0.5).rgbString(),
-                color(chartColors.orange).alpha(0.5).rgbString(),
-                color(chartColors.yellow).alpha(0.5).rgbString(),
-                color(chartColors.green).alpha(0.5).rgbString(),
-                color(chartColors.blue).alpha(0.5).rgbString(),
-                color(chartColors.black).alpha(0.5).rgbString(),
-                color(chartColors.purple).alpha(0.5).rgbString(),
-                color(chartColors.brown).alpha(0.5).rgbString(),
-                color(chartColors.gray).alpha(0.5).rgbString(),
+                color('#6d67d7').alpha(0.85).rgbString(),
+                color('#6d67d7').alpha(0.6).rgbString(),
+                color('#6d67d7').alpha(0.35).rgbString(),
+                color('#4956ca').alpha(0.5).rgbString(),
+                color('#006eae').alpha(0.5).rgbString(),
+                color('#00a2c3').alpha(0.5).rgbString(),
+                color('#17d9d6').alpha(0.5).rgbString(),
+                color('#3bfce0').alpha(0.5).rgbString(),
+                color('#c0eefa').alpha(0.5).rgbString(),
             ],
             label: 'My dataset' // for legend
         }],
@@ -45,6 +45,7 @@ var config = {
             'Meta',
         ]
     },
+    borderWidth: 4,
     options: {
         responsive: true,
         legend: {
@@ -79,36 +80,36 @@ var color;
 return "10-#3b7078-#ffffff";
 }
  
-Morris.Area({
-  element: 'test1',
-  data: [
-    {x: '2010 Q4', y: 3},
-    {x: '2011 Q1', y: 3},
-    {x: '2011 Q2', y: 3},
-    {x: '2011 Q3', y: 2},
-    {x: '2011 Q4', y: 8},
-    {x: '2012 Q1', y: 4}
-  ],
-  xkey: 'x',
-  ykeys: ['y', 'z'],
-  labels: ['Y', 'Z'],
-}).on('click', function(i, row){
-  console.log(i, row);
-});
+// Morris.Area({
+//   element: 'test1',
+//   data: [
+//     {x: '2010 Q4', y: 3},
+//     {x: '2011 Q1', y: 3},
+//     {x: '2011 Q2', y: 3},
+//     {x: '2011 Q3', y: 2},
+//     {x: '2011 Q4', y: 8},
+//     {x: '2012 Q1', y: 4}
+//   ],
+//   xkey: 'x',
+//   ykeys: ['y', 'z'],
+//   labels: ['Y', 'Z'],
+// }).on('click', function(i, row){
+//   console.log(i, row);
+// });
 
-Morris.Area({
-    element: 'test2',
-    data: [
-      {x: '2010 Q4', y: 3},
-      {x: '2011 Q1', y: 3},
-      {x: '2011 Q2', y: 3},
-      {x: '2011 Q3', y: 2},
-      {x: '2011 Q4', y: 8},
-      {x: '2012 Q1', y: 4}
-    ],
-    xkey: 'x',
-    ykeys: ['y', 'z'],
-    labels: ['Y', 'Z'],
-  }).on('click', function(i, row){
-    console.log(i, row);
-  });
+// Morris.Area({
+//     element: 'test2',
+//     data: [
+//       {x: '2010 Q4', y: 3},
+//       {x: '2011 Q1', y: 3},
+//       {x: '2011 Q2', y: 3},
+//       {x: '2011 Q3', y: 2},
+//       {x: '2011 Q4', y: 8},
+//       {x: '2012 Q1', y: 4}
+//     ],
+//     xkey: 'x',
+//     ykeys: ['y', 'z'],
+//     labels: ['Y', 'Z'],
+//   }).on('click', function(i, row){
+//     console.log(i, row);
+//   });
