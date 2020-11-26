@@ -13,20 +13,26 @@
     
 </style>
 <body>
-    <header class="header_home">
-      <a href="http://www.gov.co/"><img src="./images/gov.png" alt="gov-co" width="7%" height="45%" style="margin-top: 15px; margin-left: 106px;"></a>
+    <header class="header">
+        <img src="./images/header.png" width="100%">
+        <!-- <a href="./homePage.html"><img class="header__img" src="./images/ST.png"></a>
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="./icons/user.png" alt="User">
+                <p style="color: blanchedalmond;">Invitado</p>
+            </div>
+            <ul>
+                <li><a href="./login.html">Iniciar Sesión</a></li>
+                <li><a href="">Cerrar Sesión</a></li>
+            </ul>
+        </div> -->
     </header>
-
-    <section class ="main">
-      <img src="./images/banner.png" alt="paco-banner" width="100%" style="margin-top: 68px;">
-    </section>
-
     
-    <div class="menu_navbar" style="margin-top: 68px;">
-      <a href="#home" style="margin-left: 23%; margin-right: 4%;">Inicio</a>
+    <div class="menu_navbar">
+      <a href="#home">Inicio</a>
       <div class="menu_subnav">
-        <button class="menu_subnavbtn" >PACO <i class="fa fa-caret-down"></i></button>
-        <div class="menu_subnav-content" style="margin-left: 25%;">
+        <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
+        <div class="menu_subnav-content">
           <a href="#company">Quienes somos</a>
           <a href="#team">Datos</a>
           <a href="#careers">Reportes</a>
@@ -36,24 +42,24 @@
       </div>
       <div class="menu_subnav">
         <button class="menu_subnavbtn">Análisis <i class="fa fa-caret-down"></i></button>
-        <div class="menu_subnav-content" style="margin-left: 33%;"> 
+        <div class="menu_subnav-content">
           <a href="#bring">Cifras Generales</a>
           <a href="./graficasDepartamento.html">por Departamento</a>
-          <a href="#deliver">por Entidad</a>
+          <a href="./graficasEntidad.html">por Entidad</a>
           <a href="#package">por Contratista</a>
           <a href="#express">Descargar datos</a>
         </div>
       </div>
       <div class="menu_subnav">
         <button class="menu_subnavbtn">Denuncias <i class="fa fa-caret-down"></i></button>
-        <div class="menu_subnav-content" style="margin-left: 42%;">
-          <a href="./graficasGRAP.html">Cifras GRAP</a>
-          <a href="./formularioDenuncia.html">Has denuncias</a>
+        <div class="menu_subnav-content">
+          <a href="#link1">Cifras GRAP</a>
+          <a href="#link2">Has denuncias</a>
         </div>
       </div>
       <div class="menu_subnav">
         <button class="menu_subnavbtn">Indicadores <i class="fa fa-caret-down"></i></button>
-        <div class="menu_subnav-content" style="margin-left: 51%;">
+        <div class="menu_subnav-content">
           <a href="#link1">Mediciones</a>
           <a href="#link2">Estudios</a>
           <a href="#link2">Iniciativas</a>
@@ -61,7 +67,7 @@
       </div>
       <div class="menu_subnav">
         <button class="menu_subnavbtn">Monitoreo <i class="fa fa-caret-down"></i></button>
-        <div class="menu_subnav-content" style="margin-left: 59%;">
+        <div class="menu_subnav-content">
           <a href="#link1">Mapas noticias</a>
           <a href="#link2">Datos</a>
         </div>
@@ -69,7 +75,11 @@
       <a href="#contact">Contacto</a>
     </div>
 
-   
+    <section class ="main">
+        <h1 class = "main__title">Bienvenido a PACO</h1>
+        <h2 class = "main__subtitle">PACO es el portal de Anticorrupción de Colombia, en el que podrás visualizar Análisis de Contratación Pública.</h2>
+    </section>
+
     <section class="carousel" >
         <div class="carousel__container">
             <div class="carousel-item">

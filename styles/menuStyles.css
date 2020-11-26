@@ -1,0 +1,97 @@
+    body {
+        margin: 0;
+        font-family: 'Mulish', sans-serif;
+    }
+
+    a:link {
+        text-decoration: none;
+        color: white;
+    }
+
+    .header {
+        background-color: #3366cc;
+        width: 100%;
+        height: 80px;
+        display: block;
+        /* display: flex;
+        justify-content: space-between; */
+        z-index: 999;
+    }
+
+    .menu_navbar {
+    overflow: hidden;
+    background-color: #e6e6e6;
+    font-family: 'Mulish', sans-serif;
+    /* position: fixed; */
+    }
+
+    /* Navigation links */
+    .menu_navbar a {
+    float: left;
+    font-size: 16px;
+    font-family: 'Mulish', sans-serif;
+    color: #393e46;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    /* The subnavigation menu */
+    .menu_subnav {
+    float: left;
+    overflow: hidden;
+    width: 8%;
+    }
+
+    /* Subnav button */
+    .menu_subnav .menu_subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #393e46;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    }
+
+    /* Add a red background color to navigation links on hover */
+    .menu_navbar a:hover, .menu_subnav:hover .menu_subnavbtn {
+    background-color: #e8e8e8;
+    }
+
+    /* Style the subnav content - positioned absolute */
+    .menu_subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #e8e8e8;
+    width: 100%;
+    z-index: 1;
+    }
+
+    /* Style the subnav links */
+    .menu_subnav-content a {
+    float: left;
+    color: #393e46;
+    text-decoration: none;
+    }
+
+    /* Add a grey background color on hover */
+    .menu_subnav-content a:hover {
+    background-color: #a6dcef;
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    }
+
+    /* When you move the mouse over the subnav container, open the subnav content */
+    .menu_subnav:hover .menu_subnav-content {
+    display: block;
+    }
+
+    .footer {
+        margin-top: 200px;
+    }
+
+    
