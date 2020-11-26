@@ -14,11 +14,11 @@ var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targeuUrlTypeContractsSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/departments/",
     targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month/departments/"
 
-    targetUrlContracts = 'https://api-paco.azure-api.net/fa-query-paco/secop/contract/',
+    targetUrlContracts = 'https://api-paco.azure-api.net/fa-query-paco/secop/contract/departments/',
     endUrlContracts = '?limit=5',
-    targetUrlCountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractor/',
+    targetUrlCountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/departments/',
     endUrlCountContractors = '?limit=5&sort=count&order=desc',
-    targetUrlAmountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractor/',
+    targetUrlAmountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/departments/',
     endUrlAmountContractors = '?limit=5&sort=total&order=desc'
 
 
@@ -399,12 +399,12 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targetUrlContracts + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)) + '&limit=10')
+    fetch(targetUrlContracts + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)) + '&limit=10&sort=value&order=desc')
     .then((response) => response.json() 
     .then((data) => {
       $("#contracts").find("tr:not(:first)").remove();
       data.forEach(function(elementName) { 
-        $("<tr><td>" + elementName.contractor_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td style='text-align: center'>" + moneyFormat(elementName.value) + "</td><td style='text-align: center'><a href="+elementName.url+" target='blank' style='color: black;'>link</a></td></tr>").appendTo("#contracts")
+        $("<tr><td>" + elementName.contract_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td style='text-align: center'>" + moneyFormat(elementName.value) + "</td><td style='text-align: center'><a href="+elementName.url+" target='blank' style='color: black;'>link</a></td></tr>").appendTo("#contracts")
       })
     }))
       

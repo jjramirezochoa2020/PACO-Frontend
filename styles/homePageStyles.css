@@ -50,11 +50,12 @@ a:link {
 }
 
 .carousel {
-    width: 80%;
+    width: 59%;
     overflow: hidden;
-    padding: 30px;
-    position: relative;
-    margin-left: 25%;
+    padding: 0px;
+    margin: 0 26%;
+    /* position: relative;
+    margin-left: 25%; */
 }
 .carousel__container {
     white-space: nowrap;

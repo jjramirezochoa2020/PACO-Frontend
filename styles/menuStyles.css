@@ -3,6 +3,13 @@
         font-family: 'Mulish', sans-serif;
     }
 
+    /* To freeze header */
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%
+    }
+
     a:link {
         text-decoration: none;
         color: white;
