@@ -93,7 +93,7 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 8%;
+    margin-top: 2%;
     margin-bottom: 30px;
     margin-left: 35%;
     width: 30%;
@@ -213,4 +213,20 @@ body {
 /* To avoid the outline after click the button */
 .main__selector__button:focus {
     outline: none;
+}
+
+.complaintData {
+    text-align: center;
+}
+
+#numberProcuraduria, #numberProcuraduria3{
+    color: salmon;
+    font-family: 'Mulish', sans-serif;
+    font-size: 140px;
+}
+
+#numberProcuraduria2, #numberProcuraduria4{
+    color:purple;
+    font-family: 'Mulish', sans-serif;
+    font-size: 140px;
 }

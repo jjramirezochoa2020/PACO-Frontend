@@ -1,11 +1,6 @@
-var nameDepartment = "";
-numberProcuraduria = "0"
-document.getElementById('numberProcuraduria').innerHTML = String(numberProcuraduria);
-document.getElementById('numberProcuraduria2').innerHTML = String(numberProcuraduria);
-document.getElementById('numberProcuraduria3').innerHTML = String(numberProcuraduria);
-document.getElementById('numberProcuraduria4').innerHTML = String(numberProcuraduria);
+var nameEntity = "";
 
-nameDepartment = nameDepartment.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
+nameEntity = nameEntity.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/departments/',
