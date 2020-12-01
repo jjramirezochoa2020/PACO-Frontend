@@ -15,14 +15,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <!-- <link rel="stylesheet" href="./styles/grapStyles.css"> -->
     <script src="./libs/morris.min.js" charset="UTF-8"></script>
-    <title>Document</title>
+    <title>PACO</title>
 </head>
 <style>
-     
+     .main__container__page {
+        background-image: url(./images/background-text.png);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        margin-top: 1.1%;
+    }
+    .main__container__page__title {
+        color: white;
+        font-family: 'Mulish', sans-serif;
+        font-size: 70px;
+        font-weight: bolder;
+    }
+    .main__text {
+        margin-top: 50px;
+    }
+    .main__subtitles {
+        color: #00aed1;
+        font-family: 'Mulish', sans-serif;
+        font-size: 45px;
+        font-weight: bolder;
+    }
+
+    .page__text {
+        text-align: justify;
+        color: black;
+        font-family: 'Mulish', sans-serif;
+        font-size: 20px;
+    }
 </style>
 
 <body>
-  <header class="header" id="myHeader">
+  <header class="headerMenu" id="myHeader">
     <a href="http://www.gov.co/"><img src="./images/gov.png" alt="gov-co" width="5%" height="30%" style="margin-top: 13px; margin-left: 106px; margin-bottom: 12px;"></a>
     <div class="menu_navbar">
         <a href="./index.html" style="margin-left: 106px; margin-right: 4%;">Inicio</a>
@@ -30,7 +60,7 @@
           <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
           <div class="menu_subnav-content" style="margin-left: 8%;"> 
             <a href="#company">Quienes somos</a>
-            <a href="#team">Datos</a>
+            <a href="./info_datos.html"">Datos</a>
             <a href="#careers">Reportes</a>
             <a href="#careers">Normatividad</a>
             <a href="#careers">Alertas Tempranas</a>
@@ -50,7 +80,7 @@
           <button class="menu_subnavbtn">Denuncias <i class="fa fa-caret-down"></i></button>
           <div class="menu_subnav-content" style="margin-left: 25%;">
             <a href="./graficasGRAP.html">Cifras GRAP</a>
-            <a href="./formularioDenuncia.html">Has denuncias</a>
+            <a href="./formularioDenuncia.html">Denuncia</a>
           </div>
         </div>
         <div class="menu_subnav">
@@ -72,9 +102,22 @@
       </div>
     </header>
     
+    <div class="main__container__page"> 
+      <h1 class="main__container__page__title">Cifras Generales de reportes sobre</h1>
+      <h1 class="main__container__page__title">posibles hechos de Corrupción</h1>
+    </div>
     
-    <section class="main">
-        <h2 id="main__title" class="main__title" style="color: #00a5d1; font-size: 60px; font-family: 'Mulish', sans-serif;">Cifras Generales GRAP</h2>
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">Estos datos son agregados por el Grupo de Revisión y Análisis de Peticiones, denuncias y Reclamos de Corrupción (GRAP), y se basan en los reportes de posibles hechos de corrupción que se radican ante la Secretaría de Transparencia o la Presidencia de la República.  El conjunto de datos tiene una actualización semanal.</p>
+                    <br>
+                    <p class="page__text">Para una descripción más profunda del trabajo de este equipo diríjase al menú PACO > Datos, para una explicación más amplia.</p>
+                    <br>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- <section class="figures">
@@ -82,8 +125,8 @@
         <img class="figures__img1" id="img2" src="./images/Informes GRAP/Procesos_GRAP.png"></a>
     </section> -->
 
-    <div class="container" style="height: 600px;">
-        <h5 color='#00416d'>Top 10 de los Departamentos con mas denuncias</h5>
+    <div class="container" style="height: 600px; margin-top: 5%;">
+        <h5 color='#00416d'>Top 10 de los Departamentos con más reportes</h5>
         <hr>
         <canvas id="chart-area"></canvas>
     </div>
@@ -91,13 +134,13 @@
     <div class="container" style="margin-top: 100px;">
         <div class="row">
             <div class="col-md-6">
-                <h5 color='#00416d'>Denuncias clasificadas por Tipo</h5>
+                <h5 color='#00416d'>Reportes clasificadas por tipo</h5>
                 <hr>
                 <div id="myFirstChart"></div>
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
             </div>
             <div class="col-md-6">
-                <h5 color='#00416d'>Tipo de Remitente</h5>
+                <h5 color='#00416d'>Tipo de remitente</h5>
                 <hr>
                 <div id="mySecondChart"></div>
                 <!-- <button type="button" id="botData2" class="btn btn-primary">Cargar Data 2</button> -->
@@ -107,7 +150,7 @@
     </div>
 
     <div class="container" style="height: 500px; margin-top: 100px;">
-        <h5 color='#00416d'>Denuncias mensuales discriminadas por Tipo de Remitente</h5>
+        <h5 color='#00416d'>Reportes mensuales discriminadas por tipo de Remitente</h5>
         <hr>
         <div id="myThirdChart" style="height: 500px;"></div>
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
