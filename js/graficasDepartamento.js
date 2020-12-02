@@ -1,11 +1,9 @@
 var nameDepartment = "";
-numberProcuraduria = "0"
-document.getElementById('numberProcuraduria').innerHTML = String(numberProcuraduria);
-document.getElementById('numberProcuraduria2').innerHTML = String(numberProcuraduria);
-document.getElementById('numberProcuraduria3').innerHTML = String(numberProcuraduria);
-document.getElementById('numberProcuraduria4').innerHTML = String(numberProcuraduria);
-
-nameDepartment = nameDepartment.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
+var initialValue = "0"
+document.getElementById('numberProcuraduria').innerHTML = String(initialValue);
+document.getElementById('FNGSanctions').innerHTML = String(initialValue);
+document.getElementById('SECOPPenalties').innerHTML = String(initialValue);
+document.getElementById('numberProcuraduria4').innerHTML = String(initialValue);
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/departments/',
@@ -25,7 +23,9 @@ var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrlAmountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/departments/',
     endUrlAmountContractors = '?limit=5&sort=total&order=desc',
 
-    targetUrlProcuraduria = 'https://api-paco.azure-api.net/fa-query-paco/siri/sanctions/departaments/'
+    targetUrlProcuraduria = 'https://api-paco.azure-api.net/fa-query-paco/siri/sanctions/departaments/',
+    targetUrlFNG = "https://api-paco.azure-api.net/fa-query-paco/fgn/sanctions/departaments/",
+    targetUrlSECOPPenalties = "https://api-paco.azure-api.net/fa-query-paco/secop/penalty/departaments/"
 
 
 function updateUrl(targetUrl, filter, endUrl) {
@@ -309,9 +309,23 @@ $("#main_selector_button").click(function(ev) {
   .then((data) => {
         var complaintNumber = data[0].count;
         document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
-        document.getElementById('numberProcuraduria2').innerHTML = String(complaintNumber);
-        document.getElementById('numberProcuraduria3').innerHTML = String(complaintNumber);
         document.getElementById('numberProcuraduria4').innerHTML = String(complaintNumber);
+      }
+    ))
+  
+  fetch(targetUrlFNG + nameDepartment)
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+        var complaintNumber = data[0].count;
+        document.getElementById('FNGSanctions').innerHTML = String(complaintNumber);
+      }
+    ))
+
+  fetch(targetUrlSECOPPenalties + nameDepartment)
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+        var complaintNumber = data[0].count;
+        document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
       }
     ))
 
@@ -332,9 +346,16 @@ $("#main_selector_button").click(function(ev) {
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
-          data.forEach(function(element) {
-            newData.push({value: element.count, label: element.database});
-          })
+          if (data.length > 0) {
+            data.forEach(function(element) {
+              newData.push({value: element.count, label: element.database});
+            })
+          }
+          else {
+            newData = [
+              {value: 0, label: 'Sin registros'},
+            ]
+          }
           Morris3.setData(newData);
         }
       ))
@@ -343,9 +364,16 @@ $("#main_selector_button").click(function(ev) {
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
-          data.forEach(function(element) {
-            newData.push({value: element.count, label: element.ESTADO_DEL_PROCESO});
-          })
+          if (data.length > 0) {
+            data.forEach(function(element) {
+              newData.push({value: element.count, label: element.ESTADO_DEL_PROCESO});
+            })
+          }
+          else {
+            newData = [
+              {value: 0, label: 'Sin registros'},
+            ]
+          }
           Morris4.setData(newData);
         }
       ))
@@ -354,9 +382,16 @@ $("#main_selector_button").click(function(ev) {
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
-          data.forEach(function(element) {
-            newData.push({value: element.count, label: element.ESTADO_DEL_PROCESO});
-          })
+          if (data.length > 0) { 
+            data.forEach(function(element) {
+              newData.push({value: element.count, label: element.ESTADO_DEL_PROCESO});
+            })
+          }
+          else {
+            newData = [
+              {value: 0, label: 'Sin registros'},
+            ]
+          }
           Morris5.setData(newData);
         }
       ))
@@ -365,9 +400,16 @@ $("#main_selector_button").click(function(ev) {
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
-          data.forEach(function(element) {
-            newData.push({value: element.count, label: element.process_type});
-          })
+          if (data.length > 0) { 
+            data.forEach(function(element) {
+              newData.push({value: element.count, label: element.process_type});
+            })
+          }
+          else {
+            newData = [
+              {value: 0, label: 'Sin registros'},
+            ]
+          }
           Morris6.setData(newData);
         }
       ))
@@ -376,9 +418,16 @@ $("#main_selector_button").click(function(ev) {
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
-          data.forEach(function(element) {
-            newData.push({value: element.count, label: element.contract_type});
-          })
+          if (data.length > 0) { 
+            data.forEach(function(element) {
+              newData.push({value: element.count, label: element.contract_type});
+            })
+          }
+          else {
+            newData = [
+              {value: 0, label: 'Sin registros'},
+            ]
+          }
           Morris7.setData(newData);
         }
       ))
@@ -387,9 +436,16 @@ $("#main_selector_button").click(function(ev) {
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
-          data.forEach(function(element) {
-            newData.push({value: element.count, label: element.process_type});
-          })
+          if (data.length > 0) { 
+            data.forEach(function(element) {
+              newData.push({value: element.count, label: element.process_type});
+            })
+          }
+          else {
+            newData = [
+              {value: 0, label: 'Sin registros'},
+            ]
+          }
           Morris8.setData(newData);
         }
       ))
@@ -398,9 +454,16 @@ $("#main_selector_button").click(function(ev) {
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
-          data.forEach(function(element) {
-            newData.push({value: element.count, label: element.contract_type});
-          })
+          if (data.length > 0) { 
+            data.forEach(function(element) {
+              newData.push({value: element.count, label: element.contract_type});
+            })
+          }
+          else {
+            newData = [
+              {value: 0, label: 'Sin registros'},
+            ]
+          }
           Morris9.setData(newData);
         }
       ))
