@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/graficasDepartamento.css">
+    <link rel="stylesheet" href="./styles/graficasEntidad.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
@@ -17,18 +17,35 @@
 <style>
     .main__container {
         background-image: url(./images/background-text.png);
+        background-size: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 250px;
         margin-top: 1.1%;
     }
-
     .main__container__title {
         color: white;
         font-family: 'Mulish', sans-serif;
         font-size: 70px;
         font-weight: bolder;
+    }
+    .main__text {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+    .main__subtitles {
+        color: #00aed1;
+        font-family: 'Mulish', sans-serif;
+        font-size: 45px;
+        font-weight: bolder;
+    }
+
+    .page__text {
+        text-align: justify;
+        color: black;
+        font-family: 'Mulish', sans-serif;
+        font-size: 20px;
     }
 </style>
 
@@ -51,9 +68,9 @@
               <button class="menu_subnavbtn">Análisis <i class="fa fa-caret-down"></i></button>
               <div class="menu_subnav-content" style="margin-left: 15%;">
                 <a href="#bring">Cifras Generales</a>
-                <a href="./graficasDepartamento.html">por Departamento</a>
-                <a href="./graficasEntidad.html">por Entidad</a>
-                <a href="#package">por Contratista</a>
+                <a href="./graficasDepartamento.html">Por Departamento</a>
+                <a href="./graficasEntidad.html">Por Entidad</a>
+                <a href="#package">Por Contratista</a>
                 <a href="#express">Descargar datos</a>
               </div>
             </div>
@@ -102,6 +119,31 @@
         <img class="figures__img1" id="img2" src="./images/Informes GRAP/Procesos_GRAP.png"></a>
     </section> -->
 
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Análisis General SECOP</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">En desarrollo de los principios de publicidad e imparcialidad que rigen la función administrativa (artículo 209 de la Constitución Política) y en aplicación de los principios de transparencia y de la divulgación proactiva de la información de que trata la Ley 1712 de 2014, el presente documento realiza una presentación de la contratación realizada por la entidad o contratista plasmados en el título del mismo y tiene su origen en los datos registrados por Colombia Compra Eficiente en las plataformas de SECOP I y SECOP II presentadas a través del portal de datos abiertos de Colombia.</p>
+                    <br>
+                    <p class="page__text">Para esto se realiza una limpieza de la información contenida en los portales buscando su uniformidad, lo que hace posible el análisis agregado de la misma. Los procesos se registran desde el año 2017, sin embargo cuando se refiere a información mensual se presenta tan solo la del año en curso para tener una visión extendida del momento actual.</p>
+                    <br>
+                    <p class="page__text">A continuación se muestra el comportamiento anual de la contratación para la Entidad objeto de estudio:</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="container" style="margin-top: 5%;">
         <div class="row">
@@ -132,6 +174,28 @@
         </select>  
         <a href="./graficasDepartamento.html"><button class="main__button" id="main__button" type="button">Consultar</button>
         </a> 
+    </section>
+
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Análisis Exploratorio SECOP</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">A continuación se brinda información sobre el número y monto total de los contratos registrados en la Entidad objeto de estudio en SECOP I y II. Así mismo, se agrupan datos en relación con el tipo de contrato, su estado y la modalidad de contratación empleada. </p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="container">
@@ -192,6 +256,28 @@
         </div>
     </div>
 
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Análisis Contratación mensual por año</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">La información mensual sobre la cantidad de contratos celebrados en la Entidad durante el año correspondiente, es la siguiente:</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container" style="height:500px">
         <h5 color='#00416d'>Análisis de Contratación mensual por año</h5>
         <hr>
@@ -199,6 +285,28 @@
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
         </div>
     </div> 
+
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Lista de los contratos más cuantiosos</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">Los contratos que por monto o valor resultan los más cuantiosos en la Entidad objeto de estudio, son los siguientes: </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="container">
         <h5 color='#00416d'>Lista de los Contratos de mayor cuantía</h5>
@@ -213,6 +321,28 @@
             </tr>
           </table>
     </div> 
+
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Listado de Contratistas con mayor cantidad de contratos adjudicados</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">Los contratistas que más han contratado en la Entidad objeto de estudio (por cantidad de contratos y monto ejecutado) son los siguientes: </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="container">
         <h5 color='#00416d'>Lista de los Contratistas con contratos de mayor cuantía</h5>
