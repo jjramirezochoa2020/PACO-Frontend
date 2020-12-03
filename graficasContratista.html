@@ -17,6 +17,7 @@
 <style>
     .main__container {
         background-image: url(./images/background-text.png);
+        background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
         align-items: center;
@@ -109,6 +110,16 @@
         <input class ="main__selector__input" id="main__selector__input" type = "text" placeholder = "ID / NIT ...">
         <button class="main__selector__button" id="main_selector_button" type="button">Buscar</button>
     </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 complaintData">
+                <h5 color='#00416d' style="font-size: 20px; font-weight: bold;">Nombre del Contratista</h5>
+                <h5 id="contractorName"></h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+        </div>
+    </div>
     
     <!-- <section class="main">
         <h2 id="main__title" class="main__title">Cifras Generales Contratación</h2>
@@ -325,7 +336,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="page__text">La información mensual sobre la cantidad de contratos celebrados por el Contratista  durante el año correspondiente, es la siguiente:</p>
+                    <p class="page__text">La información mensual sobre la cantidad de contratos ejecutados por el Contratista  durante el año correspondiente, es la siguiente:</p>
                 </div>
             </div>
         </div>

@@ -1,9 +1,23 @@
+var nameDepartment = "Bogota";
+var initialValue = "0";
+
+document.getElementById('numberProcuraduria').innerHTML = String(initialValue);
+document.getElementById('FNGSanctions').innerHTML = String(initialValue);
+document.getElementById('SECOPPenalties').innerHTML = String(initialValue);
+document.getElementById('fiscalResponsabilities').innerHTML = String(initialValue);
+
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop',
     targetUrlSECOP = 'https://api-paco.azure-api.net/fa-query-paco/secop/database',
     targetUrlStateSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts",
     targetUrlStateSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts",
-    targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month"
+    targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month",
+
+    targetUrlProcuraduria = 'https://api-paco.azure-api.net/fa-query-paco/siri/sanctions/departaments/',
+    targetUrlFNG = "https://api-paco.azure-api.net/fa-query-paco/fgn/sanctions/departaments/",
+    targetUrlSECOPPenalties = "https://api-paco.azure-api.net/fa-query-paco/secop/penalty/departaments/",
+    targetUrlFiscalResponsabilities = 'https://api-paco.azure-api.net/fa-query-paco/fiscal/departments/'
+
 
 
 var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
@@ -117,7 +131,7 @@ Morris.Area.prototype.fillForSeries = function(i)  {
       var month = months[new Date(x).getMonth()];
       return month;
     },
-    smooth: true,
+    smooth: false,
   });
 
   function numberFormat(x) {
@@ -154,6 +168,38 @@ Morris.Area.prototype.fillForSeries = function(i)  {
         document.getElementById('mySecondChart').innerHTML = moneyFormat(amountContracts);
     }
   ))
+
+  fetch(targetUrlProcuraduria + nameDepartment)
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+        var complaintNumber = data[0].count;
+        document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
+      }
+    ))
+  
+  fetch(targetUrlFNG + nameDepartment)
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+        var complaintNumber = data[0].count;
+        document.getElementById('FNGSanctions').innerHTML = String(complaintNumber);
+      }
+    ))
+
+  fetch(targetUrlSECOPPenalties + nameDepartment)
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+        var complaintNumber = data[0].count;
+        document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
+      }
+    ))
+
+  fetch(targetUrlFiscalResponsabilities + nameDepartment)
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+        var complaintNumber = data[0].count;
+        document.getElementById('fiscalResponsabilities').innerHTML = String(complaintNumber);
+      }
+    ))
 
   fetch(targetUrlSECOP + "?start_year=2020&end_year=2020")
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
