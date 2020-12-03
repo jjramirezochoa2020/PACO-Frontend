@@ -1,9 +1,10 @@
 var nameDepartment = "";
-var initialValue = "0"
+var initialValue = "0";
+
 document.getElementById('numberProcuraduria').innerHTML = String(initialValue);
 document.getElementById('FNGSanctions').innerHTML = String(initialValue);
 document.getElementById('SECOPPenalties').innerHTML = String(initialValue);
-document.getElementById('numberProcuraduria4').innerHTML = String(initialValue);
+document.getElementById('fiscalResponsabilities').innerHTML = String(initialValue);
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/departments/',
@@ -25,7 +26,8 @@ var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
 
     targetUrlProcuraduria = 'https://api-paco.azure-api.net/fa-query-paco/siri/sanctions/departaments/',
     targetUrlFNG = "https://api-paco.azure-api.net/fa-query-paco/fgn/sanctions/departaments/",
-    targetUrlSECOPPenalties = "https://api-paco.azure-api.net/fa-query-paco/secop/penalty/departaments/"
+    targetUrlSECOPPenalties = "https://api-paco.azure-api.net/fa-query-paco/secop/penalty/departaments/",
+    targetUrlFiscalResponsabilities = 'https://api-paco.azure-api.net/fa-query-paco/fiscal/departments/',
 
 
 function updateUrl(targetUrl, filter, endUrl) {
@@ -248,7 +250,7 @@ function donutPlot(newData, color, elementName) {
       var month = months[new Date(x).getMonth()];
       return month;
     },
-    smooth: true,
+    smooth: false,
   });
 
   function moneyFormat(x) {
@@ -309,7 +311,6 @@ $("#main_selector_button").click(function(ev) {
   .then((data) => {
         var complaintNumber = data[0].count;
         document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
-        document.getElementById('numberProcuraduria4').innerHTML = String(complaintNumber);
       }
     ))
   
@@ -326,6 +327,14 @@ $("#main_selector_button").click(function(ev) {
   .then((data) => {
         var complaintNumber = data[0].count;
         document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
+      }
+    ))
+
+  fetch(targetUrlFiscalResponsabilities + nameDepartment)
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+        var complaintNumber = data[0].count;
+        document.getElementById('fiscalResponsabilities').innerHTML = String(complaintNumber);
       }
     ))
 

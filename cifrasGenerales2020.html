@@ -17,6 +17,7 @@
 <style>
     .main__container {
         background-image: url(./images/background-text.png);
+        background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
         align-items: center;
@@ -96,12 +97,13 @@
                 <a href="#link2">Datos</a>
               </div>
             </div>
-            <a href="#contact">Contacto</a>
+            <a href="./contacto.html" style="margin-right: 2%;">Contacto</a>
+            <a href="./formularioDenuncia.html" style="font-weight: bold; color: orangered;">Denuncie</a>
           </div>
     </header>
     
     <div class="main__container"> 
-        <h1 class="main__container__title">Cifras Generales Contratación 2020</h1>
+        <h1 class="main__container__title">Cifras Generales</h1>
     </div>
 
     <!-- <section class="figures">
@@ -109,11 +111,75 @@
         <img class="figures__img1" id="img2" src="./images/Informes GRAP/Procesos_GRAP.png"></a>
     </section> -->
 
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Banderas Rojas</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="main__text"></section>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="page__text">El presente tablero presenta la información registrada en el sistema de contratación pública secop 1 y secop 2 que agrupa Colombia Compra Eficiente correspondiente a las compras que han realizado las entidades en el año 2020. Para mayor información de este conjunto de datos remitase a la pestaña Datos del menú PACO.</p>
+                    <p class="page__text">Las alertas tempranas o banderas rojas son registros de sanciones, denuncias o circunstancias que representan situaciones anómalas. Hay que recordar que estos registros NO DEBEN SER TOMADAS COMO HECHOS DE CORRUPCIÓN, son alertas que motivan realizar una pesquisa a mayor profundidad del proceso siempre bajo el supuesto de la buena fé o datos que nos dan información de la lucha contra el fenómenos de la corrupción. Las banderas se pueden detallar <a href="./info_datos.html" style="color: blue">aquí</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 complaintData">
+                <p id="numberProcuraduria"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones Disciplinarias SIRI</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+            <div class="col-md-6 complaintData">
+                <p id="FNGSanctions"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones penales</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 complaintData">
+                <p id="SECOPPenalties"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones SECOP</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+            <div class="col-md-6 complaintData">
+                <p id="fiscalResponsabilities"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Responsabilidades Fiscales</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+        </div>
+    </div>
+
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Cifras Generales Contratación 2020</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">El presente tablero presenta la información registrada en el sistema de contratación pública SECOP I y SECOP II que agrupa Colombia Compra Eficiente correspondiente a las compras que han realizado las entidades en el año 2020. Para mayor información de este conjunto de datos remitase a la pestaña Datos del menú PACO.</p>
                 </div>
             </div>
         </div>
@@ -134,7 +200,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="margin-top: 7%;">
         <div class="row">
             <div class="col-md-4">
                 <h5 color='#00416d'>Contratos en SECOP en el año 2020</h5>

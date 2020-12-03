@@ -218,6 +218,7 @@ body {
 
 .complaintData {
     text-align: center;
+    font-family: 'Mulish', sans-serif;
 }
 
 #numberProcuraduria, #SECOPPenalties{
@@ -230,4 +231,9 @@ body {
     color:purple;
     font-family: 'Mulish', sans-serif;
     font-size: 140px;
+}
+
+#contractorName {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
 }

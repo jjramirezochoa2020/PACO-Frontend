@@ -218,6 +218,7 @@ body {
 
 .complaintData {
     text-align: center;
+    font-family: 'Mulish', sans-serif;
 }
 
 #numberProcuraduria, #SECOPPenalties{
@@ -226,7 +227,7 @@ body {
     font-size: 140px;
 }
 
-#FNGSanctions, #numberProcuraduria4{
+#FNGSanctions, #fiscalResponsabilities{
     color:purple;
     font-family: 'Mulish', sans-serif;
     font-size: 140px;

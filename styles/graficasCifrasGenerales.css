@@ -231,3 +231,20 @@ body {
 .generalSummary {
     text-align: center;
 }
+
+.complaintData {
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+}
+
+#numberProcuraduria, #SECOPPenalties{
+    color: salmon;
+    font-family: 'Mulish', sans-serif;
+    font-size: 140px;
+}
+
+#FNGSanctions, #fiscalResponsabilities{
+    color:purple;
+    font-family: 'Mulish', sans-serif;
+    font-size: 140px;
+}
