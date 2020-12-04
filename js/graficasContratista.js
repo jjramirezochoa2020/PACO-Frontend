@@ -329,6 +329,9 @@ $("#main_selector_button").click(function(ev) {
           var complaintNumber = data[0].count;
           document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
         }
+        else {
+          document.getElementById('numberProcuradurianumberProcuraduria').innerHTML = initialValue;
+        }
       }
     ))
   
@@ -338,6 +341,9 @@ $("#main_selector_button").click(function(ev) {
         if (data.length > 0) {
           var complaintNumber = data[0].count;
           document.getElementById('collusions').innerHTML = String(complaintNumber);
+        }
+        else {
+          document.getElementById('collusions').innerHTML = initialValue;
         }
       }
     ))
@@ -349,6 +355,9 @@ $("#main_selector_button").click(function(ev) {
           var complaintNumber = data[0].count;
           document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
         }
+        else {
+          document.getElementById('SECOPPenalties').innerHTML = initialValue;
+        }
       }
     ))
 
@@ -358,6 +367,9 @@ $("#main_selector_button").click(function(ev) {
         if (data.length > 0) {
           var complaintNumber = data[0].count;
           document.getElementById('fiscalResponsabilities').innerHTML = String(complaintNumber);
+        }
+        else {
+          document.getElementById('fiscalResponsabilities').innerHTML = initialValue;
         }
       }
     ))
