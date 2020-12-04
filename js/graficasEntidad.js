@@ -241,7 +241,7 @@ function donutPlot(newData, color, elementName) {
       var month = months[new Date(x).getMonth()];
       return month;
     },
-    smooth: true,
+    smooth: false,
   });
 
   function moneyFormat(x) {

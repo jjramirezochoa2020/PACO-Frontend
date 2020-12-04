@@ -14,12 +14,13 @@
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 250px;
         margin-top: 1.1%;
     }
-    .main__container__title {
+    .main__container__page__title {
         color: white;
         font-family: 'Mulish', sans-serif;
         font-size: 70px;
@@ -47,53 +48,48 @@
         <div class="menu_navbar">
             <a href="./index.html" style="margin-left: 106px; margin-right: 4%;">Inicio</a>
             <div class="menu_subnav">
-                <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
-                <div class="menu_subnav-content" style="margin-left: 8%;"> 
-                <a href="#company">Quienes somos</a>
-                <a href="#team">Datos</a>
-                <a href="#careers">Reportes</a>
-                <a href="#careers">Normatividad</a>
-                <a href="#careers">Alertas Tempranas</a>
-                </div>
+              <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
+              <div class="menu_subnav-content" style="margin-left: 8%;"> 
+                <a href="./Quienes_somos.html">Quienes somos</a>
+                <a href="./info_datos.html">Datos</a>
+                <a href="./Reportes.html">Reportes</a>
+                <a href="./normatividad.html">Normatividad</a>
+                <a href="./alertasTempranas.html">Alertas Tempranas</a>
+              </div>
             </div>
             <div class="menu_subnav">
-                <button class="menu_subnavbtn">Análisis <i class="fa fa-caret-down"></i></button>
-                <div class="menu_subnav-content" style="margin-left: 15%;">
-                <a href="#bring">Cifras Generales</a>
+              <button class="menu_subnavbtn">Análisis <i class="fa fa-caret-down"></i></button>
+              <div class="menu_subnav-content" style="margin-left: 15%;">
+                <a href="./cifrasGenerales2020.html">Cifras Generales</a>
                 <a href="./graficasDepartamento.html">por Departamento</a>
                 <a href="./graficasEntidad.html">por Entidad</a>
-                <a href="#package">por Contratista</a>
-                <a href="#express">Descargar datos</a>
-                </div>
+                <a href="./graficasContratista.html">por Contratista</a>
+                <a href="#descarga">Descargar datos</a>
+              </div>
             </div>
             <div class="menu_subnav">
-                <button class="menu_subnavbtn">Denuncias <i class="fa fa-caret-down"></i></button>
-                <div class="menu_subnav-content" style="margin-left: 25%;">
+              <button class="menu_subnavbtn">Denuncias <i class="fa fa-caret-down"></i></button>
+              <div class="menu_subnav-content" style="margin-left: 25%;">
                 <a href="./graficasGRAP.html">Cifras GRAP</a>
                 <a href="./formularioDenuncia.html">Denuncia</a>
-                </div>
+              </div>
             </div>
             <div class="menu_subnav">
-                <button class="menu_subnavbtn">Indicadores <i class="fa fa-caret-down"></i></button>
-                <div class="menu_subnav-content" style="margin-left: 33%;">
-                <a href="#link1">Mediciones</a>
-                <a href="#link2">Estudios</a>
-                <a href="#link2">Iniciativas</a>
-                </div>
-            </div>
-            <div class="menu_subnav">
-                <button class="menu_subnavbtn">Monitoreo <i class="fa fa-caret-down"></i></button>
-                <div class="menu_subnav-content" style="margin-left: 41%;">
-                <a href="#link1">Mapas noticias</a>
+              <button class="menu_subnavbtn">Monitoreo <i class="fa fa-caret-down"></i></button>
+              <div class="menu_subnav-content" style="margin-left: 33%;">
+                <a href="./Mapa.html">Mapas noticias</a>
                 <a href="#link2">Datos</a>
-                </div>
+              </div>
             </div>
-            <a href="#contact">Contacto</a>
-        </div>
+            <a href="#indicadores">Indicadores</a>
+            <a href="./contacto.html" style="margin-left: 3%; margin-right: 3%;">Contacto</a>
+            <a href="./formularioDenuncia.html" style="font-weight: bold; color: orangered;">Denuncie</a>
+          </div>
     </header>
 
-    <div class="main__container"> 
-        <h1 class="main__container__title">Monitoreo de noticias de Corrupción</h1>
+    <div class="main__container">
+        <h1 class="main__container__page__title">Mapa de noticias</h1>
+        <h1 class="main__container__page__title">de Corrupción</h1>
     </div>
 
     <section class="main__text"></section>

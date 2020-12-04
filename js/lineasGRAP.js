@@ -47,7 +47,7 @@ function plotCount(newData, elementName, color) {
       labels: ['Ciudadano', 'Entidad_Privada', 'Entidad_Publica', 'Sociedad_civil'],
       resize: true,
       lineColors: color,
-      smooth: true,
+      smooth: false,
       xLabelFormat: function(x) {
         var month = months[new Date(x).getMonth()];
         return month;
@@ -119,7 +119,7 @@ data3 = [
 
 plotDonut(data1, 'myFirstChart', color1)
 plotDonut(data2, 'mySecondChart', color2)
-plotCount(data3, 'myThirdChart', color1)
+plotCount(data3, 'myThirdChart', ['#C14D9F', '#2CB4AC', '#51adcf', '#14274e'])
 
 
 
