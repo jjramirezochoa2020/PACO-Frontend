@@ -1,4 +1,3 @@
-var nameDepartment = "Bogota";
 var initialValue = "0";
 
 document.getElementById('numberProcuraduria').innerHTML = String(initialValue);
@@ -13,12 +12,7 @@ var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrlStateSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts",
     targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month",
 
-    targetUrlProcuraduria = 'https://api-paco.azure-api.net/fa-query-paco/siri/sanctions/departaments/',
-    targetUrlFNG = "https://api-paco.azure-api.net/fa-query-paco/fgn/sanctions/departaments/",
-    targetUrlSECOPPenalties = "https://api-paco.azure-api.net/fa-query-paco/secop/penalty/departaments/",
-    targetUrlFiscalResponsabilities = 'https://api-paco.azure-api.net/fa-query-paco/fiscal/departments/'
-
-
+    targetUrlGeneralComplaints = 'https://api-paco.azure-api.net/fa-query-paco/general/count'
 
 var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
 
@@ -169,35 +163,17 @@ Morris.Area.prototype.fillForSeries = function(i)  {
     }
   ))
 
-  fetch(targetUrlProcuraduria + nameDepartment)
+  fetch(targetUrlGeneralComplaints)
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
-        var complaintNumber = data[0].count;
-        document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
-      }
-    ))
-  
-  fetch(targetUrlFNG + nameDepartment)
-  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
-  .then((data) => {
-        var complaintNumber = data[0].count;
-        document.getElementById('FNGSanctions').innerHTML = String(complaintNumber);
-      }
-    ))
-
-  fetch(targetUrlSECOPPenalties + nameDepartment)
-  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
-  .then((data) => {
-        var complaintNumber = data[0].count;
-        document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
-      }
-    ))
-
-  fetch(targetUrlFiscalResponsabilities + nameDepartment)
-  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
-  .then((data) => {
-        var complaintNumber = data[0].count;
-        document.getElementById('fiscalResponsabilities').innerHTML = String(complaintNumber);
+        var complaintNumber1 = data[0].count;
+        var complaintNumber2 = data[2].count;
+        var complaintNumber3 = data[4].count;
+        var complaintNumber4 = data[3].count;
+        document.getElementById('numberProcuraduria').innerHTML = numberFormat(complaintNumber1);
+        document.getElementById('FNGSanctions').innerHTML = numberFormat(complaintNumber2);
+        document.getElementById('SECOPPenalties').innerHTML = numberFormat(complaintNumber3);
+        document.getElementById('fiscalResponsabilities').innerHTML = numberFormat(complaintNumber4);
       }
     ))
 

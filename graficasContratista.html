@@ -58,46 +58,40 @@
             <div class="menu_subnav">
               <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
               <div class="menu_subnav-content" style="margin-left: 8%;"> 
-                <a href="#company">Quienes somos</a>
-                <a href="#team">Datos</a>
-                <a href="#careers">Reportes</a>
-                <a href="#careers">Normatividad</a>
-                <a href="#careers">Alertas Tempranas</a>
+                <a href="./Quienes_somos.html">Quienes somos</a>
+                <a href="./info_datos.html">Datos</a>
+                <a href="./Reportes.html">Reportes</a>
+                <a href="./normatividad.html">Normatividad</a>
+                <a href="./alertasTempranas.html">Alertas Tempranas</a>
               </div>
             </div>
             <div class="menu_subnav">
               <button class="menu_subnavbtn">Análisis <i class="fa fa-caret-down"></i></button>
               <div class="menu_subnav-content" style="margin-left: 15%;">
-                <a href="#bring">Cifras Generales</a>
-                <a href="./graficasDepartamento.html">Por Departamento</a>
-                <a href="./graficasEntidad.html">Por Entidad</a>
-                <a href="#package">Por Contratista</a>
-                <a href="#express">Descargar datos</a>
+                <a href="./cifrasGenerales2020.html">Cifras Generales</a>
+                <a href="./graficasDepartamento.html">por Departamento</a>
+                <a href="./graficasEntidad.html">por Entidad</a>
+                <a href="./graficasContratista.html">por Contratista</a>
+                <a href="#descarga">Descargar datos</a>
               </div>
             </div>
             <div class="menu_subnav">
               <button class="menu_subnavbtn">Denuncias <i class="fa fa-caret-down"></i></button>
               <div class="menu_subnav-content" style="margin-left: 25%;">
                 <a href="./graficasGRAP.html">Cifras GRAP</a>
-                <a href="./formularioDenuncia.html">Has denuncias</a>
-              </div>
-            </div>
-            <div class="menu_subnav">
-              <button class="menu_subnavbtn">Indicadores <i class="fa fa-caret-down"></i></button>
-              <div class="menu_subnav-content" style="margin-left: 33%;">
-                <a href="#link1">Mediciones</a>
-                <a href="#link2">Estudios</a>
-                <a href="#link2">Iniciativas</a>
+                <a href="./formularioDenuncia.html">Denuncia</a>
               </div>
             </div>
             <div class="menu_subnav">
               <button class="menu_subnavbtn">Monitoreo <i class="fa fa-caret-down"></i></button>
-              <div class="menu_subnav-content" style="margin-left: 41%;">
-                <a href="#link1">Mapas noticias</a>
+              <div class="menu_subnav-content" style="margin-left: 33%;">
+                <a href="./Mapa.html">Mapas noticias</a>
                 <a href="#link2">Datos</a>
               </div>
             </div>
-            <a href="#contact">Contacto</a>
+            <a href="#indicadores">Indicadores</a>
+            <a href="./contacto.html" style="margin-left: 3%; margin-right: 3%;">Contacto</a>
+            <a href="./formularioDenuncia.html" style="font-weight: bold; color: orangered;">Denuncie</a>
           </div>
     </header>
 
@@ -157,12 +151,12 @@
         <div class="row">
             <div class="col-md-6 complaintData">
                 <p id="numberProcuraduria"></p>
-                <h5 color='#00416d' style="font-size: 30px;">Sanciones Disciplinarias SIRI</h5>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones Disciplinarias SIRI</h5>
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
             </div>
             <div class="col-md-6 complaintData">
-                <p id="FNGSanctions"></p>
-                <h5 color='#00416d' style="font-size: 30px;">Sanciones penales</h5>
+                <p id="collusions"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Colusiones contratación SIC</h5>
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
             </div>
         </div>
@@ -172,12 +166,12 @@
         <div class="row">
             <div class="col-md-6 complaintData">
                 <p id="SECOPPenalties"></p>
-                <h5 color='#00416d' style="font-size: 30px;">Sanciones SECOP</h5>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones SECOP</h5>
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
             </div>
             <div class="col-md-6 complaintData">
                 <p id="numberProcuraduria4"></p>
-                <h5 color='#00416d' style="font-size: 30px;">Cantidad de denuncias procuraduria</h5>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Cantidad de denuncias procuraduria</h5>
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
             </div>
         </div>
@@ -413,7 +407,7 @@
         <hr>
         <table class="table" id="contractors1">
             <tr>
-              <th style="width: 60%; text-align: center">Contratista</th>
+              <th style="width: 60%; text-align: center">Nombre Entidad</th>
               <th style="width: 40%; text-align: center">Cantidad de contratos</th>
             </tr>
             
@@ -421,12 +415,13 @@
     </div> 
 
     <div class="container" style="margin-bottom: 10%;">
-        <h5 color='#00416d'>Lista de las Entidades que adjudicaron contratos de mayor cuantía al Contratista</h5>
+        <h5 color='#00416d'>Lista de los municipios donde el contratista ejecutó más contratos</h5>
         <hr>
         <table class="table" id="contractors2">
             <tr>
-              <th style="width: 60%; text-align: center">Contratista</th>
-              <th style="width: 40%; text-align: center">Cuantia Total de los Contratos</th>
+              <th style="width: 40%; text-align: center">Departamento</th>
+              <th style="width: 40%; text-align: center">Municipio</th>
+              <th style="width: 20%; text-align: center">Cantidad de Contratos</th>
             </tr>
         
           </table>
