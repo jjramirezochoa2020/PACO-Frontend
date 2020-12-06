@@ -15,68 +15,99 @@
     <title>PACO</title>
 </head>
 <style>
+    .main__container {
+        background-image: url(./images/background-text.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        margin-top: 1.1%;
+    }
+    .main__container__title {
+        color: white;
+        font-family: 'Mulish', sans-serif;
+        font-size: 70px;
+        font-weight: bolder;
+    }
+    .main__text {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+    .main__subtitles {
+        color: #00aed1;
+        font-family: 'Mulish', sans-serif;
+        font-size: 45px;
+        font-weight: bolder;
+    }
 
+    .page__text {
+        text-align: justify;
+        color: black;
+        font-family: 'Mulish', sans-serif;
+        font-size: 20px;
+    }
 </style>
 
 <body>
-    <header class="header" id="myHeader">
-        <a href="http://www.gov.co/"><img src="./images/gov.png" alt="gov-co" width="9%" height="45%" style="margin-top: 1.5%; margin-left: 7%; height: auto;"></a>
+    <header class="headerMenu" id="myHeader">
+        <a href="http://www.gov.co/"><img src="./images/gov.png" alt="gov-co" width="5%" height="30%" style="margin-top: 13px; margin-left: 106px; margin-bottom: 12px;"></a>
         <div class="menu_navbar">
             <a href="./index.html" style="margin-left: 106px; margin-right: 4%;">Inicio</a>
             <div class="menu_subnav">
               <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
               <div class="menu_subnav-content" style="margin-left: 8%;"> 
-                <a href="#company">Quienes somos</a>
-                <a href="#team">Datos</a>
-                <a href="#careers">Reportes</a>
-                <a href="#careers">Normatividad</a>
-                <a href="#careers">Alertas Tempranas</a>
+                <a href="./Quienes_somos.html">Quienes somos</a>
+                <a href="./info_datos.html">Datos</a>
+                <a href="./Reportes.html">Reportes</a>
+                <a href="./normatividad.html">Normatividad</a>
+                <a href="./alertasTempranas.html">Alertas Tempranas</a>
               </div>
             </div>
             <div class="menu_subnav">
               <button class="menu_subnavbtn">Análisis <i class="fa fa-caret-down"></i></button>
               <div class="menu_subnav-content" style="margin-left: 15%;">
-                <a href="#bring">Cifras Generales</a>
-                <a href="./graficasDepartamento.html">por Departamento</a>
-                <a href="./graficasEntidad.html">por Entidad</a>
-                <a href="#package">por Contratista</a>
-                <a href="#express">Descargar datos</a>
+                <a href="./cifrasGenerales2020.html"> Nacional</a>
+                <a href="./graficasDepartamento.html">Departamental</a>
+                <a href="./graficasEntidad.html">Entidad</a>
+                <a href="./graficasContratista.html">Contratista</a>
+                <a href="#descarga">Descargar datos</a>
               </div>
             </div>
             <div class="menu_subnav">
               <button class="menu_subnavbtn">Denuncias <i class="fa fa-caret-down"></i></button>
               <div class="menu_subnav-content" style="margin-left: 25%;">
-                <a href="./graficasGRAP.html">Cifras GRAP</a>
-                <a href="./formularioDenuncia.html">Has denuncias</a>
-              </div>
-            </div>
-            <div class="menu_subnav">
-              <button class="menu_subnavbtn">Indicadores <i class="fa fa-caret-down"></i></button>
-              <div class="menu_subnav-content" style="margin-left: 33%;">
-                <a href="#link1">Mediciones</a>
-                <a href="#link2">Estudios</a>
-                <a href="#link2">Iniciativas</a>
+                <a href="./graficasGRAP.html">Cifras</a>
+                <a href="./formularioDenuncia.html">Denuncie</a>
               </div>
             </div>
             <div class="menu_subnav">
               <button class="menu_subnavbtn">Monitoreo <i class="fa fa-caret-down"></i></button>
-              <div class="menu_subnav-content" style="margin-left: 41%;">
-                <a href="#link1">Mapas noticias</a>
+              <div class="menu_subnav-content" style="margin-left: 33%;">
+                <a href="./Mapa.html">Mapas noticias</a>
                 <a href="#link2">Datos</a>
               </div>
             </div>
-            <a href="#contact">Contacto</a>
+            <a href="#indicadores">Indicadores</a>
+            <a href="./contacto.html" style="margin-left: 3%; margin-right: 3%;">Contacto</a>
+            <a href="./formularioDenuncia.html" style="font-weight: bold; color: orangered;">Denuncie</a>
           </div>
     </header>
 
-    <section class ="main__selector">
+    <div class="main__container"> 
+        <h1 class="main__container__title">Análisis por Departamento</h1>
+    </div>
+
+    <section class="main__selector" style="margin-bottom: 5%;">
         <!-- <input class ="main__input" id="main__input" type = "text" placeholder = "Buscar ..."> -->
         <select class ="main__selector__input" id="main__selector__input">
             <option value="" disabled selected>Seleccione Departamento</option>
             <option value="Amazonas "> Amazonas </option>  
             <option value="Antioquia"> Antioquia </option>  
             <option value="Arauca"> Arauca </option>  
-            <option value="Atlántico"> Atlántico </option>  
+            <option value="Atlántico"> Atlántico </option>
+            <option value="Bogotá"> Bogotá </option>
             <option value="Bolívar"> Bolívar </option>  
             <option value="Boyacá"> Boyacá </option>
             <option value="Caldas"> Caldas </option>  
@@ -109,16 +140,95 @@
         <button class="main__selector__button" id="main_selector_button" type="button">Buscar</button>
     </section>
     
-    <section class="main">
+    <!-- <section class="main">
         <h2 id="main__title" class="main__title">Cifras Generales Contratación</h2>
-    </section>
+    </section> -->
 
     <!-- <section class="figures">
         <img class="figures__img1" id="img1" src="./images/Informes GRAP/Procesos_GRAP.png"></a>
         <img class="figures__img1" id="img2" src="./images/Informes GRAP/Procesos_GRAP.png"></a>
     </section> -->
 
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Banderas Rojas</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">Las alertas tempranas o banderas rojas son registros de sanciones, denuncias o circunstancias que representan situaciones anómalas. Hay que recordar que estos registros NO DEBEN SER TOMADAS COMO HECHOS DE CORRUPCIÓN, son alertas que motivan realizar una pesquisa a mayor profundidad del proceso siempre bajo el supuesto de la buena fé o datos que nos dan información de la lucha contra el fenómenos de la corrupción. Las banderas se pueden detallar <a href="./info_datos.html" style="color: blue">aquí</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <div class="container">
+        <div class="row">
+            <div class="col-md-6 complaintData">
+                <p id="numberProcuraduria"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones Disciplinarias SIRI</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+            <div class="col-md-6 complaintData">
+                <p id="FNGSanctions"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones penales</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 complaintData">
+                <p id="SECOPPenalties"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones SECOP</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+            <div class="col-md-6 complaintData">
+                <p id="fiscalResponsabilities"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Responsabilidades Fiscales</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+        </div>
+    </div>
+
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Análisis General SECOP</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">En desarrollo de los principios de publicidad e imparcialidad que rigen la función administrativa (artículo 209 de la Constitución Política) y en aplicación de los principios de transparencia y de la divulgación proactiva de la información de que trata la Ley 1712 de 2014, el presente documento realiza una presentación de la contratación realizada por la entidad o contratista plasmados en el título del mismo y tiene su origen en los datos registrados por Colombia Compra Eficiente en las plataformas de SECOP I y SECOP II presentadas a través del portal de datos abiertos de Colombia.</p>
+                    <br>
+                    <p class="page__text">Para esto se realiza una limpieza de la información contenida en los portales buscando su uniformidad, lo que hace posible el análisis agregado de la misma. Los procesos se registran desde el año 2017, sin embargo cuando se refiere a información mensual se presenta tan solo la del año en curso para tener una visión extendida del momento actual.</p>
+                    <br>
+                    <p class="page__text">A continuación se muestra el comportamiento anual de la contratación para el Departamento objeto de estudio:</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="margin-top: 5%;">
         <div class="row">
             <div class="col-md-6">
                 <h5 color='#00416d'>Cantidad Contratos por Año</h5>
@@ -147,6 +257,28 @@
         </select>  
         <a href="./graficasDepartamento.html"><button class="main__button" id="main__button" type="button">Consultar</button>
         </a> 
+    </section>
+
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Análisis Exploratorio SECOP</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">A continuación se brinda información sobre el número y monto total de los contratos registrados en el Departamento objeto de estudio en SECOP I y II. Así mismo, se agrupan datos en relación con el tipo de contrato, su estado y la modalidad de contratación empleada. </p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="container">
@@ -207,6 +339,28 @@
         </div>
     </div>
 
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Análisis Contratación mensual por año</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">La información mensual sobre la cantidad de contratos celebrados en el Departamento durante el año correspondiente, es la siguiente:</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container" style="height:500px">
         <h5 color='#00416d'>Análisis de Contratación mensual por año</h5>
         <hr>
@@ -214,6 +368,28 @@
                 <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
         </div>
     </div> 
+
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Lista de los contratos más cuantiosos</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">Los contratos que por monto o valor resultan los más cuantiosos en el Departamento objeto de estudio, son los siguientes: </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="container">
         <h5 color='#00416d'>Lista de los Contratos de mayor cuantía</h5>
@@ -229,8 +405,30 @@
           </table>
     </div> 
 
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Listado de Contratistas con mayor cantidad de contratos adjudicados</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">Los contratistas que más han contratado en el Departamento objeto de estudio (por cantidad de contratos y monto ejecutado) son los siguientes: </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
-        <h5 color='#00416d'>Lista de los Contratistas con contratos de mayor cuantía</h5>
+        <h5 color='#00416d'>Lista de los Contratistas con mayor cantidad de contratos</h5>
         <hr>
         <table class="table" id="contractors1">
             <tr>
@@ -241,8 +439,8 @@
           </table>
     </div> 
 
-    <div class="container">
-        <h5 color='#00416d'>Lista de los Contratistas con mayor cantidad de contratos</h5>
+    <div class="container" style="margin-bottom: 10%;">
+        <h5 color='#00416d'>Lista de los Contratistas con contratos de mayor cuantía</h5>
         <hr>
         <table class="table" id="contractors2">
             <tr>

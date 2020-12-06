@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+     <link rel="stylesheet" href="./styles/menuStyles.css">
+    <title>PACO</title>
+</head>
+<style>
+    .main__container {
+        background-image: url(./images/background-text.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        margin-top: 1.1%;
+    }
+    .main__container__title {
+        color: white;
+        font-family: 'Mulish', sans-serif;
+        font-size: 70px;
+        font-weight: bolder;
+    }
+    .main__text {
+        margin-top: 50px;
+    }
+    .main__subtitles {
+        color: #00aed1;
+        font-family: 'Mulish', sans-serif;
+        font-size: 45px;
+        font-weight: bolder;
+    }
+    .page__text {
+        text-align: justify;
+        color: black;
+        font-family: 'Mulish', sans-serif;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <header class="headerMenu" id="myHeader">
+      <a href="http://www.gov.co/"><img src="./images/gov.png" alt="gov-co" width="5%" height="30%" style="margin-top: 13px; margin-left: 106px; margin-bottom: 12px;"></a>
+      <div class="menu_navbar">
+          <a href="./index.html" style="margin-left: 106px; margin-right: 4%;">Inicio</a>
+          <div class="menu_subnav">
+            <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
+            <div class="menu_subnav-content" style="margin-left: 8%;"> 
+              <a href="./Quienes_somos.html">Quienes somos</a>
+              <a href="./info_datos.html">Datos</a>
+              <a href="./Reportes.html">Reportes</a>
+              <a href="./normatividad.html">Normatividad</a>
+              <a href="./alertasTempranas.html">Alertas Tempranas</a>
+            </div>
+          </div>
+          <div class="menu_subnav">
+            <button class="menu_subnavbtn">Análisis <i class="fa fa-caret-down"></i></button>
+            <div class="menu_subnav-content" style="margin-left: 15%;">
+              <a href="./cifrasGenerales2020.html"> Nacional</a>
+              <a href="./graficasDepartamento.html">Departamental</a>
+              <a href="./graficasEntidad.html">Entidad</a>
+              <a href="./graficasContratista.html">Contratista</a>
+              <a href="#descarga">Descargar datos</a>
+            </div>
+          </div>
+          <div class="menu_subnav">
+            <button class="menu_subnavbtn">Denuncias <i class="fa fa-caret-down"></i></button>
+            <div class="menu_subnav-content" style="margin-left: 25%;">
+              <a href="./graficasGRAP.html">Cifras</a>
+              <a href="./formularioDenuncia.html">Denuncie</a>
+            </div>
+          </div>
+          <div class="menu_subnav">
+            <button class="menu_subnavbtn">Monitoreo <i class="fa fa-caret-down"></i></button>
+            <div class="menu_subnav-content" style="margin-left: 33%;">
+              <a href="./Mapa.html">Mapas noticias</a>
+              <a href="#link2">Datos</a>
+            </div>
+          </div>
+          <a href="#indicadores">Indicadores</a>
+          <a href="./contacto.html" style="margin-left: 3%; margin-right: 3%;">Contacto</a>
+          <a href="./formularioDenuncia.html" style="font-weight: bold; color: orangered;">Denuncie</a>
+        </div>
+  </header>
+
+    <div class="main__container"> 
+        <h1 class="main__container__title">Alertas Tempranas</h1>
+    </div>
+
+    <section class="main__text"></section>
+    <div class="container" style="margin-bottom: 8%;"style="margin-bottom: 8%;">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="page__text">Las alertas tempranas que registra el Portal Anticorrupción de Colombia (PACO), no representan hechos de corrupción, representan situaciones que han sido registradas como anómalas pero que bien puede ser legales en el contexto del contrato o proceso que se esté analizando, por lo que estas <span style="font-weight: bold;">NO DEBEN SER TOMADAS COMO HECHOS DE CORRUPCIÓN</span>, son alertas que motivan realizar una pesquisa a mayor profundidad del proceso siempre bajo el supuesto de la buena fé.</p>
+                <br>
+                <p class="page__text">Las alertas tempranas se dan en los análisis por Departamento, Entidad o Contratista y ubica:</p>
+                <br>
+                <ul class="page__text">
+                    <li>Sanciones penales en el periodo 2008 a 2018.</li>
+                    <li>Sanciones disciplinarias contenidas en el SIRI de la Procuraduría.</li>
+                    <li>Sanciones registradas por Colombia Compra Eficiente.</li>
+                    <li>Personas en el boletín de responsabilidades fiscales.</li>
+                    <li>Sanciones impuestas por la SIC por colusión contra la administración pública.</li>
+                  </ul>
+                <br>
+                <p class="page__text">Aparte de esto se han tenido en cuenta las siguientes alertas las cuales estan en proceso de implementación en la plataforma:</p>
+                <br>
+                  <ul class="page__text">
+                    <li>Entidad contratante y distancia entre la fecha de apertura del proceso y la fecha de elección presidencial o regional.
+                        <ul><li>En caso de que la apertura del proceso o la adjudicación del contrato resulte extrañamente coincidente con una época de elecciones populares, se eleva una alerta que debe estudiarse por considerarse un posible hecho de corrupción por temas políticos o delito de  tráfico  de influencias etc.</li></ul></li>
+                    <li>Manifestaciones de interés vs presentación de ofertas.
+                        <ul><li>Se genera alerta cuando la manifestación de interés no coincide  con  la presentación  de  ofertas,  es  decir  la participación es baja o nula. Puede generar la declaratoria de desierta.</li></ul></li>
+                    <li>Plazo para la presentación de ofertas.
+                        <ul><li>Un breve periodo de tiempo no permite a los oferentes preparar y presentar ofertas de alta calidad. Los licitantes que hayan sido  "informados" sobre la oportunidad antes de la apertura pública pueden tener una ventaja injusta si se les da más tiempo para preparar las ofertas.</li></ul></li>
+                  </ul>
+                <br>
+                <p class="page__text">Así mismo el Observatorio de Transparencia y Anticorrupción lidera una organización nacional de nombre “Red Nacional de Observatorios Anticorrupción - RENOBA” cuya misión es desde la sociedad civil, académica y el Estado generar investigación en materia anticorrupción y encontrar entre otras cosas más alertas que puedan ser implementadas en este portal.</p>
+                <br>
+                <p class="page__text">Para más información de esta red por favor visite: <a href="http://www.secretariatransparencia.gov.co/observatorio-anticorrupcion/red-nacional-de-observatorios-anticorrupcion" style="color: blue;">http://www.secretariatransparencia.gov.co/observatorio-anticorrupcion/red-nacional-de-observatorios-anticorrupcion</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <footer class="footer" style="margin-top: auto;">
+        <img src="./images/footer-PACO.png" alt="footer PACO" width="100%" height="100%">
+    </footer>
+    <script>
+        window.onscroll = function() {myFunction()};
+  
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+  
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+</html>

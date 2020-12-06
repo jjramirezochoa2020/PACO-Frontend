@@ -1,33 +1,34 @@
-var nameDepartment = "";
-var initialValue = "0";
+var IDContractor = "";
+var initialValue = "0"
 
 document.getElementById('numberProcuraduria').innerHTML = String(initialValue);
-document.getElementById('FNGSanctions').innerHTML = String(initialValue);
+document.getElementById('collusions').innerHTML = String(initialValue);
 document.getElementById('SECOPPenalties').innerHTML = String(initialValue);
-document.getElementById('fiscalResponsabilities').innerHTML = String(initialValue);
+document.getElementById('numberProcuraduria4').innerHTML = String(initialValue);
+
+IDContractor = IDContractor.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/departments/',
-    targetUrlSECOP = 'https://api-paco.azure-api.net/fa-query-paco/secop/database/departments/',
-    targetUrlStateSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts/departments/",
-    targetUrlStateSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts/departments/",
-    targetUrlTypeProcessSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/process_type/departments/",
-    targetUrlTypeProcessSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/process_type/departments/",
-    targeuUrlTypeContractsSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/departments/",
-    targeuUrlTypeContractsSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/departments/",
-    targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month/departments/"
+    targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/',
+    targetUrlSECOP = 'https://api-paco.azure-api.net/fa-query-paco/secop/database/contractors/',
+    targetUrlStateSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts/contractors/",
+    targetUrlStateSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts/contractors/",
+    targetUrlTypeProcessSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/process_type/contractors/",
+    targetUrlTypeProcessSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/process_type/contractors/",
+    targeuUrlTypeContractsSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/contractors/",
+    targeuUrlTypeContractsSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/contractors/",
+    targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month/contractors/"
 
-    targetUrlContracts = 'https://api-paco.azure-api.net/fa-query-paco/secop/contract/departments/',
-    endUrlContracts = '?limit=5',
-    targetUrlCountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/departments/',
-    endUrlCountContractors = '?limit=5&sort=count&order=desc',
-    targetUrlAmountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/departments/',
-    endUrlAmountContractors = '?limit=5&sort=total&order=desc',
+    targetUrlProcuraduria = 'https://api-paco.azure-api.net/fa-query-paco/siri/sanctions/contractors/',
+    targetUrlCollusions = "https://api-paco.azure-api.net/fa-query-paco/sic/collusions/contractors/",
+    targetUrlSECOPPenalties = "https://api-paco.azure-api.net/fa-query-paco/secop/penalty/contractors/",
+    targetUrlFiscalResponsabilities = 'https://api-paco.azure-api.net/fa-query-paco/fiscal/contractors/',
 
-    targetUrlProcuraduria = 'https://api-paco.azure-api.net/fa-query-paco/siri/sanctions/departaments/',
-    targetUrlFNG = "https://api-paco.azure-api.net/fa-query-paco/fgn/sanctions/departaments/",
-    targetUrlSECOPPenalties = "https://api-paco.azure-api.net/fa-query-paco/secop/penalty/departaments/",
-    targetUrlFiscalResponsabilities = 'https://api-paco.azure-api.net/fa-query-paco/fiscal/departments/',
+    targetUrlContracts = 'https://api-paco.azure-api.net/fa-query-paco/secop/contract/contractors/',
+    targetUrlCountEntities = 'https://api-paco.azure-api.net/fa-query-paco/secop/entities/contractors/',
+    targetUrlCountCities = 'https://api-paco.azure-api.net/fa-query-paco/secop/municipalities/contractors/',
+    
+    targetUrlContractorName = 'https://api-paco.azure-api.net/fa-query-paco/secop/list_contractors/'
 
 
 function updateUrl(targetUrl, filter, endUrl) {
@@ -276,10 +277,25 @@ function donutPlot(newData, color, elementName) {
 
 $("#main_selector_button").click(function(ev) {
   ev.preventDefault();
-  nameDepartment = document.getElementById("main__selector__input").value;
-  // document.getElementById('main__title').innerHTML = "Cifras Generales Contratación "+String(nameDepartment);
-  nameDepartment = nameDepartment.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove accents
-  query = targetUrlGlobalNumber + nameDepartment + "?start_year=2016";
+  IDContractor = document.getElementById("main__selector__input").value;
+  IDContractor =  IDContractor.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove accents
+
+  fetch(targetUrlContractorName + IDContractor +'?sort=count&order=asc&limit=1')
+  .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
+  .then((data) => {
+        if (data.length == 0) {
+          window.alert('El ID/NIT no se encuentra registrado en SECOP')
+        }
+        else {
+          var contractor_name = data[0].contractor_name;
+          document.getElementById('contractorName').innerHTML = String(contractor_name);
+        }
+      }
+    ))
+
+  
+  
+  query = targetUrlGlobalNumber + IDContractor + "?start_year=2016";
   fetch(query)
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
@@ -306,37 +322,58 @@ $("#main_selector_button").click(function(ev) {
       }
   ))
 
-  fetch(targetUrlProcuraduria + nameDepartment)
+  fetch(targetUrlProcuraduria + IDContractor)
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
-        var complaintNumber = data[0].count;
-        document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
+        if (data.length > 0) {
+          var complaintNumber = data[0].count;
+          document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
+        }
+        else {
+          document.getElementById('numberProcuradurianumberProcuraduria').innerHTML = initialValue;
+        }
       }
     ))
   
-  fetch(targetUrlFNG + nameDepartment)
+  fetch(targetUrlCollusions + IDContractor)
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
-        var complaintNumber = data[0].count;
-        document.getElementById('FNGSanctions').innerHTML = String(complaintNumber);
+        if (data.length > 0) {
+          var complaintNumber = data[0].count;
+          document.getElementById('collusions').innerHTML = String(complaintNumber);
+        }
+        else {
+          document.getElementById('collusions').innerHTML = initialValue;
+        }
       }
     ))
 
-  fetch(targetUrlSECOPPenalties + nameDepartment)
+  fetch(targetUrlSECOPPenalties + IDContractor)
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
-        var complaintNumber = data[0].count;
-        document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
+        if (data.length > 0) {
+          var complaintNumber = data[0].count;
+          document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
+        }
+        else {
+          document.getElementById('SECOPPenalties').innerHTML = initialValue;
+        }
       }
     ))
 
-  fetch(targetUrlFiscalResponsabilities + nameDepartment)
+  fetch(targetUrlFiscalResponsabilities + IDContractor)
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
-        var complaintNumber = data[0].count;
-        document.getElementById('fiscalResponsabilities').innerHTML = String(complaintNumber);
+        if (data.length > 0) {
+          var complaintNumber = data[0].count;
+          document.getElementById('fiscalResponsabilities').innerHTML = String(complaintNumber);
+        }
+        else {
+          document.getElementById('fiscalResponsabilities').innerHTML = initialValue;
+        }
       }
     ))
+  
 
 })
 
@@ -351,7 +388,7 @@ $("#main_selector_button").click(function(ev) {
       initial_year = year;
       end_year = year;
     }
-    fetch(targetUrlSECOP + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)))
+    fetch(targetUrlSECOP + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)))
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
@@ -369,13 +406,13 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targetUrlStateSECOPI + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop%20i&sort=count")
+    fetch(targetUrlStateSECOPI + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop%20i&sort=count")
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
           if (data.length > 0) {
             data.forEach(function(element) {
-              newData.push({value: element.count, label: element.ESTADO_DEL_PROCESO});
+              newData.push({value: element.count, label: element.process_status});
             })
           }
           else {
@@ -387,13 +424,13 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targetUrlStateSECOPI + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop%20ii&sort=count")
+    fetch(targetUrlStateSECOPI + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop%20ii&sort=count")
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
           if (data.length > 0) { 
             data.forEach(function(element) {
-              newData.push({value: element.count, label: element.ESTADO_DEL_PROCESO});
+              newData.push({value: element.count, label: element.process_status});
             })
           }
           else {
@@ -405,7 +442,7 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targetUrlTypeProcessSECOPI + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop i")
+    fetch(targetUrlTypeProcessSECOPI + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop i")
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
@@ -423,7 +460,7 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targeuUrlTypeContractsSECOPI + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop i")
+    fetch(targeuUrlTypeContractsSECOPI + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop i")
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
@@ -441,7 +478,7 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targetUrlTypeProcessSECOPI + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop ii")
+    fetch(targetUrlTypeProcessSECOPI + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop ii")
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
@@ -459,7 +496,7 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targeuUrlTypeContractsSECOPI + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop ii")
+    fetch(targeuUrlTypeContractsSECOPI + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year))+"&database=secop ii")
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
@@ -477,7 +514,7 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targetUrlMonthlyCount + nameDepartment + "?sort=month&order=asc"+"&start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)))
+    fetch(targetUrlMonthlyCount + IDContractor + "?sort=month&order=asc"+"&start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)))
     .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
     .then((data) => {
           var newData = [];
@@ -488,30 +525,30 @@ $("#main_selector_button").click(function(ev) {
         }
       ))
 
-    fetch(targetUrlContracts + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)) + '&limit=10&sort=value&order=desc')
+    fetch(targetUrlContracts + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)) + '&limit=10&sort=value&order=desc')
     .then((response) => response.json() 
     .then((data) => {
       $("#contracts").find("tr:not(:first)").remove();
       data.forEach(function(elementName) { 
-        $("<tr><td>" + elementName.contract_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td style='text-align: center'>" + moneyFormat(elementName.value) + "</td><td style='text-align: center'><a href="+elementName.url+" target='blank' style='color: black;'>link</a></td></tr>").appendTo("#contracts")
+        $("<tr><td>" + elementName.contractor_reference + "</td><td>" + elementName.contractor + "</td><td>" + elementName.entity + "</td><td style='text-align: center'>" + moneyFormat(elementName.value) + "</td><td style='text-align: center'><a href="+elementName.url+" target='blank' style='color: black;'>link</a></td></tr>").appendTo("#contracts")
       })
     }))
       
-    fetch(targetUrlCountContractors + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)) + '&limit=10&sort=count&order=desc')
+    fetch(targetUrlCountEntities + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)) + '&limit=10&sort=count&order=desc')
     .then((response) => response.json() 
     .then((data) => { 
       $("#contractors1").find("tr:not(:first)").remove(); 
       data.forEach(function(elementName) { 
-        $("<tr><td>" + elementName.contractor + "</td><td style='text-align: center'>" + elementName.count + "</td></tr>").appendTo("#contractors1")
+        $("<tr><td>" + elementName.entity + "</td><td style='text-align: center'>" + elementName.count + "</td></tr>").appendTo("#contractors1")
       })
     }))
 
-    fetch(targetUrlAmountContractors + nameDepartment + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)) + '&limit=10&sort=total&order=desc')
+    fetch(targetUrlCountCities + IDContractor + "?start_year="+String(parseInt(initial_year))+"&end_year="+String(parseInt(end_year)) + '&limit=10&sort=count&order=desc')
     .then((response) => response.json() 
     .then((data) => {
       $("#contractors2").find("tr:not(:first)").remove();  
       data.forEach(function(elementName) { 
-        $("<tr><td>" + elementName.contractor + "</td><td style='text-align: center'>" + moneyFormat(elementName.total) + "</td></tr>").appendTo("#contractors2")
+        $("<tr><td style='text-align: center'>" + elementName.department + "</td><td style='text-align: center'>" + elementName.municipality + "</td><td style='text-align: center'>" + elementName.count + "</td></tr>").appendTo("#contractors2")
       })
     }))
 

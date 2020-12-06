@@ -227,8 +227,13 @@ body {
     font-size: 140px;
 }
 
-#FNGSanctions, #fiscalResponsabilities{
+#collusions, #numberProcuraduria4{
     color:purple;
     font-family: 'Mulish', sans-serif;
     font-size: 140px;
+}
+
+#contractorName {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
 }

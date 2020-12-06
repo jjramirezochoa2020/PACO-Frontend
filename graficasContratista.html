@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/graficasEntidad.css">
+    <link rel="stylesheet" href="./styles/graficasContratista.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
@@ -96,14 +96,24 @@
     </header>
     
     <div class="main__container"> 
-        <h1 class="main__container__title">Análisis por Entidad Pública</h1>
+        <h1 class="main__container__title">Análisis por Contratista</h1>
     </div>
 
     <section class ="main__selector">
         <!-- <input class ="main__input" id="main__input" type = "text" placeholder = "Buscar ..."> -->
-        <input class ="main__selector__input" id="main__selector__input" type = "text" placeholder = "Entidad ...">
+        <input class ="main__selector__input" id="main__selector__input" type = "text" placeholder = "ID / NIT ...">
         <button class="main__selector__button" id="main_selector_button" type="button">Buscar</button>
     </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 complaintData">
+                <h5 color='#00416d' style="font-size: 20px; font-weight: bold;">Nombre del Contratista</h5>
+                <h5 id="contractorName"></h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+        </div>
+    </div>
     
     <!-- <section class="main">
         <h2 id="main__title" class="main__title">Cifras Generales Contratación</h2>
@@ -113,6 +123,59 @@
         <img class="figures__img1" id="img1" src="./images/Informes GRAP/Procesos_GRAP.png"></a>
         <img class="figures__img1" id="img2" src="./images/Informes GRAP/Procesos_GRAP.png"></a>
     </section> -->
+
+    <section class="main__text" style="margin-bottom: 0;"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main__subtitles">Banderas Rojas</h2>
+                    <hr>
+                    <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main__text"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="page__text">Las alertas tempranas o banderas rojas son registros de sanciones, denuncias o circunstancias que representan situaciones anómalas. Hay que recordar que estos registros NO DEBEN SER TOMADAS COMO HECHOS DE CORRUPCIÓN, son alertas que motivan realizar una pesquisa a mayor profundidad del proceso siempre bajo el supuesto de la buena fé o datos que nos dan información de la lucha contra el fenómenos de la corrupción. Las banderas se pueden detallar <a href="./info_datos.html" style="color: blue">aquí</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 complaintData">
+                <p id="numberProcuraduria"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones Disciplinarias SIRI</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+            <div class="col-md-6 complaintData">
+                <p id="collusions"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Colusiones contratación SIC</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 complaintData">
+                <p id="SECOPPenalties"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Sanciones SECOP</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+            <div class="col-md-6 complaintData">
+                <p id="numberProcuraduria4"></p>
+                <h5 color='#00416d' style="font-size: 30px; font-weight: bold;">Cantidad de denuncias procuraduria</h5>
+                <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
+            </div>
+        </div>
+    </div>
 
     <section class="main__text" style="margin-bottom: 0;"></section>
         <div class="container">
@@ -134,7 +197,7 @@
                     <br>
                     <p class="page__text">Para esto se realiza una limpieza de la información contenida en los portales buscando su uniformidad, lo que hace posible el análisis agregado de la misma. Los procesos se registran desde el año 2017, sin embargo cuando se refiere a información mensual se presenta tan solo la del año en curso para tener una visión extendida del momento actual.</p>
                     <br>
-                    <p class="page__text">A continuación se muestra el comportamiento anual de la contratación para la Entidad objeto de estudio:</p>
+                    <p class="page__text">A continuación se muestra el comportamiento anual de la contratación para el Contratista objeto de estudio:</p>
                 </div>
             </div>
         </div>
@@ -187,7 +250,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="page__text">A continuación se brinda información sobre el número y monto total de los contratos registrados en la Entidad objeto de estudio en SECOP I y II. Así mismo, se agrupan datos en relación con el tipo de contrato, su estado y la modalidad de contratación empleada. </p>
+                    <p class="page__text">A continuación se brinda información sobre el número y monto total de los contratos registrados al Contratista objeto de estudio en SECOP I y II. Así mismo, se agrupan datos en relación con el tipo de contrato, su estado y la modalidad de contratación empleada. </p>
                 </div>
             </div>
         </div>
@@ -267,7 +330,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="page__text">La información mensual sobre la cantidad de contratos celebrados en la Entidad durante el año correspondiente, es la siguiente:</p>
+                    <p class="page__text">La información mensual sobre la cantidad de contratos ejecutados por el Contratista  durante el año correspondiente, es la siguiente:</p>
                 </div>
             </div>
         </div>
@@ -297,7 +360,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="page__text">Los contratos que por monto o valor resultan los más cuantiosos en la Entidad objeto de estudio, son los siguientes: </p>
+                    <p class="page__text">Los contratos que por monto o valor resultan los más cuantiosos en el Departamento objeto de estudio, son los siguientes: </p>
                 </div>
             </div>
         </div>
@@ -321,7 +384,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="main__subtitles">Listado de Contratistas con mayor cantidad de contratos adjudicados</h2>
+                    <h2 class="main__subtitles">Listado de Entidades con mayor cantidad de contratos adjudicados al Contratista</h2>
                     <hr>
                     <!-- <button type="button" id="botData1" class="btn btn-primary">Cargar Data 1</button> -->
                 </div>
@@ -333,18 +396,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="page__text">Los contratistas que más han contratado en la Entidad objeto de estudio (por cantidad de contratos y monto ejecutado) son los siguientes: </p>
+                    <p class="page__text">Los Entidades que más contratados han celebrado con el Contratista objeto de estudio (por cantidad de contratos y monto ejecutado) son los siguientes: </p>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="container">
-        <h5 color='#00416d'>Lista de los Contratistas con mayor cantidad de contratos</h5>
+        <h5 color='#00416d'>Lista de las Entidades que adjudicaron mayor cantidad de contratos al Contratista</h5>
         <hr>
         <table class="table" id="contractors1">
             <tr>
-              <th style="width: 60%; text-align: center">Contratista</th>
+              <th style="width: 60%; text-align: center">Nombre Entidad</th>
               <th style="width: 40%; text-align: center">Cantidad de contratos</th>
             </tr>
             
@@ -352,12 +415,13 @@
     </div> 
 
     <div class="container" style="margin-bottom: 10%;">
-        <h5 color='#00416d'>Lista de los Contratistas con contratos de mayor cuantía</h5>
+        <h5 color='#00416d'>Lista de los municipios donde el contratista ejecutó más contratos</h5>
         <hr>
         <table class="table" id="contractors2">
             <tr>
-              <th style="width: 60%; text-align: center">Contratista</th>
-              <th style="width: 40%; text-align: center">Cuantia Total de los Contratos</th>
+              <th style="width: 40%; text-align: center">Departamento</th>
+              <th style="width: 40%; text-align: center">Municipio</th>
+              <th style="width: 20%; text-align: center">Cantidad de Contratos</th>
             </tr>
         
           </table>
@@ -367,7 +431,7 @@
         <img src="./images/footer-PACO.png" alt="footer PACO" width="100%" height="100%" style="margin-top: 0%;  height: auto;">
     </footer>
 
-    <script src="./js/graficasEntidad.js" charset="UTF-8"></script>
+    <script src="./js/graficasContratista.js" charset="UTF-8"></script>
     <script>
         window.onscroll = function() {myFunction()};
 

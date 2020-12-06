@@ -91,12 +91,12 @@ body {
     display: flex;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 3%;
     margin-bottom: 30px;
-    margin-left: 35%;
-    width: 30%;
+    margin-left: 29%;
+    width: 40%;
 }
 
 /* selector list properties */
@@ -110,7 +110,7 @@ body {
     height: 50px;
     outline: none;
     padding: 0px 20px;
-    width: 60%;
+    width: 90%;
 }
 
 /* selector button properties */
@@ -126,6 +126,7 @@ body {
     font-family: 'Mulish', sans-serif;
     height: 50px;
     letter-spacing: 1px;
+    margin-left: 5%;
     padding: 0px 50px;
     outline: none;
 }
@@ -137,7 +138,6 @@ body {
 /* table properties */
 .table {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
     border-collapse: collapse;
     width: 100%;
 }
@@ -216,9 +216,25 @@ body {
     outline: none;
 }
 
-.complaintData {
-    text-align: center;
+#myFirstChart {
+    color: salmon;
     font-family: 'Mulish', sans-serif;
+    font-size: 70px;
+}
+
+#mySecondChart {
+    color:purple;
+    font-family: 'Mulish', sans-serif;
+    font-size: 70px;
+}
+
+.generalSummary {
+    text-align: center;
+}
+
+.complaintData {
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
 }
 
 #numberProcuraduria, #SECOPPenalties{

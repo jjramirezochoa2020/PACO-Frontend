@@ -15,7 +15,7 @@ body {
 }
 
 .login__container {
-    background-color:#00416d;
+    background-color: #00aed1;
     border: 2px solid white;
     border-radius: 40px;
     color: white;
@@ -125,7 +125,7 @@ body {
 }
 
 ::placeholder {
-    color: #7A93AC;
+    color: #c7ced1;
     
 }
 
