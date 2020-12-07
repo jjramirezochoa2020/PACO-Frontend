@@ -8,7 +8,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     padding: 30px 30px;
     margin-bottom: 20%;
     /* min-height: calc(100vh - 200px); */
@@ -25,6 +25,16 @@ body {
     display: flex;
     justify-content:  space-around;
     flex-direction: column;
+}
+
+.login__container_text {
+    background-color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    min-height: 800px;
+    padding: 20px;
+    text-align: justify;
+    width: 20%;
 }
 
 .login__container--form {

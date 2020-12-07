@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/formularioDenunciaStyles.css">
+    <link rel="stylesheet" href="./styles/menuStyles.css">
+    <title>PACO</title>
+</head>
+<style>
+    .main__container {
+        background-image: url(./images/background-text.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        margin-top: 1.1%;
+    }
+    .main__container__title {
+        color: white;
+        font-family: 'Mulish', sans-serif;
+        font-size: 70px;
+        font-weight: bolder;
+    }
+    .main__text {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+    .main__subtitles {
+        color: #00aed1;
+        font-family: 'Mulish', sans-serif;
+        font-size: 45px;
+        font-weight: bolder;
+    }
+
+    .page__text {
+        text-align: justify;
+        color: black;
+        font-family: 'Mulish', sans-serif;
+        font-size: 20px;
+    }
+</style>
+<body>
+  <header class="headerMenu" id="myHeader">
+    <a href="http://www.gov.co/"><img src="./images/gov.png" alt="gov-co" width="5%" height="30%" style="margin-top: 13px; margin-left: 106px; margin-bottom: 12px;"></a>
+    <div class="menu_navbar">
+        <a href="./index.html" style="margin-left: 106px; margin-right: 4%;">Inicio</a>
+        <div class="menu_subnav">
+          <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
+          <div class="menu_subnav-content" style="margin-left: 8%;"> 
+            <a href="./Quienes_somos.html">¿Quienes somos?</a>
+            <a href="./Reportes.html">¿Que hacemos?</a>
+            <a href="./info_datos.html">Datos</a>
+            <a href="./normatividad.html">Normatividad</a>
+          </div>
+        </div>
+        <div class="menu_subnav">
+          <button class="menu_subnavbtn">Análisis <i class="fa fa-caret-down"></i></button>
+          <div class="menu_subnav-content" style="margin-left: 15%;">
+            <a href="./cifrasGenerales2020.html"> Nacional</a>
+            <a href="./graficasDepartamento.html">Departamental</a>
+            <a href="./graficasEntidad.html">Entidad</a>
+            <a href="./graficasContratista.html">Contratista</a>
+            <a href="#descarga">Descargar datos</a>
+          </div>
+        </div>
+        <div class="menu_subnav">
+          <button class="menu_subnavbtn">Denuncias <i class="fa fa-caret-down"></i></button>
+          <div class="menu_subnav-content" style="margin-left: 25%;">
+            <a href="./graficasGRAP.html">Cifras</a>
+            <a href="./formularioDenuncia.html">Denuncie</a>
+          </div>
+        </div>
+        <div class="menu_subnav">
+          <button class="menu_subnavbtn">Monitoreo <i class="fa fa-caret-down"></i></button>
+          <div class="menu_subnav-content" style="margin-left: 33%;">
+            <a href="./Mapa.html">Mapas noticias</a>
+            <a href="#link2">Datos</a>
+          </div>
+        </div>
+        <a href="#indicadores">Indicadores</a>
+        <a href="./contacto.html" style="margin-left: 3%; margin-right: 3%;">Contacto</a>
+        <a href="./formularioDenuncia.html" style="font-weight: bold; color: orangered;">Denuncie</a>
+      </div>
+    </header>
+
+    <div class="main__container"> 
+      <h1 class="main__container__title">Denuncie</h1>
+  </div>
+
+    <section class="login" style="margin-top: 50px;">
+        <section class="login__container">
+            <h2>Diligencia el reporte de corrupción</h2>
+            <form class="login__container--form">
+                <input class="input" type="text" placeholder="Nombre / Entidad">
+                <input class="input" type="text" placeholder="Departamento">
+                <input class="input" type="text" placeholder="Municipio">
+                <input class="input" type="text" placeholder="Asunto">
+                <input class="input" type="text" placeholder="Implicados">
+                <textarea class="input_box" placeholder="Descripción hechos"></textarea>
+                <input class="inputFile" type="file" name="uploaded_file" id="uploaded_file" multiple>
+                <button type="button" class="button">Enviar</button>
+            </form>
+        </section>
+        <section class="login__container_text">
+          <p>De acuerdo con el Literal 14° del Artículo 13° del Decreto 1784 de 2019, la Secretaría de Transparencia tiene entre sus funciones “Denunciar directamente o dar traslado a los entes de control y a la Fiscalía General de la Nación de presuntos delitos contra la administración pública, contra el orden económico y social, o contra el patrimonio económico, así como de posibles infracciones disciplinarias, que por su gravedad sean puestas en su conocimiento, así como las denuncias interpuestas directamente por veedores ciudadanos y la ciudadanía en general”.</p>
+          <p>Por lo anterior, la Secretaría de Transparencia, a través de PACO, pone a disposición de los colombianos este canal seguro para que los colombianos hagan llegar la información relacionada con los posibles hechos de corrupción de los que tenga conocimiento, con el nivel de detalle que consideren.</p>
+          <p>Tenga en cuenta las siguientes claves o tips para realizar un reporte efectivo sobre posibles hechos de corrupción: </p>
+          <ul>
+            <li>PACO garantiza total reserva de los datos o información personal del remitente, reportante o peticionario. No obstante, lo anterior, el reporte también puede ser forma anónima.</li>
+            <li>Entre más consistente sea su reporte por posibles hechos de corrupción, más efectivo será su análisis y trámite. En ese sentido, si puede relacionar además de los hechos, a los implicados en el caso, ayudaría en el proceso.</li>
+            <li>Si su reporte cuenta con anexos o documentos que entreguen más detalle sobre el caso, por favor adjúntelos. Estos soportes pueden ser archivos, enlaces o imágenes.</li>
+          </ul>
+        </section>
+    </section>
+    <footer class="footer">
+        <img src="./images/footer-PACO.png" alt="footer PACO" width="100%">
+    </footer>
+    <script>
+      window.onscroll = function() {myFunction()};
+
+      var header = document.getElementById("myHeader");
+      var sticky = header.offsetTop;
+
+      function myFunction() {
+          if (window.pageYOffset > sticky) {
+              header.classList.add("sticky");
+          } else {
+              header.classList.remove("sticky");
+          }
+      }
+    </script>
+</body>
+</html>
