@@ -304,7 +304,9 @@ $("#main_selector_button").click(function(ev) {
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
         if (data.length == 0) {
-          window.alert('El ID/NIT no se encuentra registrado en SECOP')
+          var contractor_name = "";
+          document.getElementById('contractorName').innerHTML = String(contractor_name);
+          window.alert('El ID/NIT no se encuentra registrado en SECOP');
         }
         else {
           var contractor_name = data[0].contractor_name;

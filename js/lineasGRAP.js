@@ -85,7 +85,6 @@ function plotBar(newData, elementName) {
 
 data1 = [
          {value: 7900, label: 'Derecho de Petición'},
-         {value: 895, label: 'Respuesta'},
          {value: 543, label: 'Otro Tipo'},
          {value: 38, label: 'Monitoreo Medios'},
         ];
