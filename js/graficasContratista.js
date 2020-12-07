@@ -4,7 +4,7 @@ var initialValue = "0"
 document.getElementById('numberProcuraduria').innerHTML = String(initialValue);
 document.getElementById('collusions').innerHTML = String(initialValue);
 document.getElementById('SECOPPenalties').innerHTML = String(initialValue);
-document.getElementById('numberProcuraduria4').innerHTML = String(initialValue);
+document.getElementById('fiscalResponsabilities').innerHTML = String(initialValue);
 
 IDContractor = IDContractor.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
 
@@ -274,6 +274,26 @@ function donutPlot(newData, color, elementName) {
     return "$ "+partialString;
   }
 
+  function numberFormat(x) {
+    var i;
+    var partialString = "";
+    len = String(x).length;
+    for (i=1; i<=len; i++) {
+      if ((i-1)%3 == 0) {
+        if (i == 1) {
+          partialString = String(x)[len-i]
+        }
+        else {
+          partialString = String(x)[len-i]+"."+partialString;
+        }
+      }
+      else {
+        partialString = String(x)[len-i]+partialString;
+      }
+    }
+    return partialString;
+  }
+
 
 $("#main_selector_button").click(function(ev) {
   ev.preventDefault();
@@ -327,10 +347,10 @@ $("#main_selector_button").click(function(ev) {
   .then((data) => {
         if (data.length > 0) {
           var complaintNumber = data[0].count;
-          document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
+          document.getElementById('numberProcuraduria').innerHTML = numberFormat(complaintNumber);
         }
         else {
-          document.getElementById('numberProcuradurianumberProcuraduria').innerHTML = initialValue;
+          document.getElementById('numberProcuraduria').innerHTML = initialValue;
         }
       }
     ))
@@ -340,7 +360,7 @@ $("#main_selector_button").click(function(ev) {
   .then((data) => {
         if (data.length > 0) {
           var complaintNumber = data[0].count;
-          document.getElementById('collusions').innerHTML = String(complaintNumber);
+          document.getElementById('collusions').innerHTML = numberFormat(complaintNumber);
         }
         else {
           document.getElementById('collusions').innerHTML = initialValue;
@@ -353,7 +373,7 @@ $("#main_selector_button").click(function(ev) {
   .then((data) => {
         if (data.length > 0) {
           var complaintNumber = data[0].count;
-          document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
+          document.getElementById('SECOPPenalties').innerHTML = numberFormat(complaintNumber);
         }
         else {
           document.getElementById('SECOPPenalties').innerHTML = initialValue;
@@ -366,7 +386,7 @@ $("#main_selector_button").click(function(ev) {
   .then((data) => {
         if (data.length > 0) {
           var complaintNumber = data[0].count;
-          document.getElementById('fiscalResponsabilities').innerHTML = String(complaintNumber);
+          document.getElementById('fiscalResponsabilities').innerHTML = numberFormat(complaintNumber);
         }
         else {
           document.getElementById('fiscalResponsabilities').innerHTML = initialValue;
@@ -374,7 +394,6 @@ $("#main_selector_button").click(function(ev) {
       }
     ))
   
-
 })
 
   $("#main__button").click(function(ev) {

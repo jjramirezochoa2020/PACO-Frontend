@@ -273,6 +273,25 @@ function donutPlot(newData, color, elementName) {
     return "$ "+partialString;
   }
 
+  function numberFormat(x) {
+    var i;
+    var partialString = "";
+    len = String(x).length;
+    for (i=1; i<=len; i++) {
+      if ((i-1)%3 == 0) {
+        if (i == 1) {
+          partialString = String(x)[len-i]
+        }
+        else {
+          partialString = String(x)[len-i]+"."+partialString;
+        }
+      }
+      else {
+        partialString = String(x)[len-i]+partialString;
+      }
+    }
+    return partialString;
+  }
 
 $("#main_selector_button").click(function(ev) {
   ev.preventDefault();
@@ -310,7 +329,7 @@ $("#main_selector_button").click(function(ev) {
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
         var complaintNumber = data[0].count;
-        document.getElementById('numberProcuraduria').innerHTML = String(complaintNumber);
+        document.getElementById('numberProcuraduria').innerHTML = numberFormat(complaintNumber);
       }
     ))
   
@@ -318,7 +337,7 @@ $("#main_selector_button").click(function(ev) {
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
         var complaintNumber = data[0].count;
-        document.getElementById('FNGSanctions').innerHTML = String(complaintNumber);
+        document.getElementById('FNGSanctions').innerHTML = numberFormat(complaintNumber);
       }
     ))
 
@@ -326,7 +345,7 @@ $("#main_selector_button").click(function(ev) {
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
         var complaintNumber = data[0].count;
-        document.getElementById('SECOPPenalties').innerHTML = String(complaintNumber);
+        document.getElementById('SECOPPenalties').innerHTML = numberFormat(complaintNumber);
       }
     ))
 
@@ -334,7 +353,7 @@ $("#main_selector_button").click(function(ev) {
   .then((response) => response.json() // el objeto response puede ser convertido a text también como response.text, pero en este caso será una cadena de texto en lugar de un JSON. También se puede convertir en un BLOB (Binary Large Object)
   .then((data) => {
         var complaintNumber = data[0].count;
-        document.getElementById('fiscalResponsabilities').innerHTML = String(complaintNumber);
+        document.getElementById('fiscalResponsabilities').innerHTML = numberFormat(complaintNumber);
       }
     ))
 
