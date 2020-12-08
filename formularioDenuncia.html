@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="./images/fav.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/formularioDenunciaStyles.css">
     <link rel="stylesheet" href="./styles/menuStyles.css">
@@ -45,14 +47,14 @@
 </style>
 <body>
   <header class="headerMenu" id="myHeader">
-    <a href="http://www.gov.co/"><img src="./images/gov.png" alt="gov-co" width="5%" height="30%" style="margin-top: 13px; margin-left: 106px; margin-bottom: 12px;"></a>
+    <a href="https://www.gov.co/"><img src="./images/gov.png" alt="gov-co" width="5%" height="30%" style="margin-top: 13px; margin-left: 106px; margin-bottom: 12px;"></a>
     <div class="menu_navbar">
         <a href="./index.html" style="margin-left: 106px; margin-right: 4%;">Inicio</a>
         <div class="menu_subnav">
           <button class="menu_subnavbtn">PACO <i class="fa fa-caret-down"></i></button>
           <div class="menu_subnav-content" style="margin-left: 8%;"> 
-            <a href="./Quienes_somos.html">¿Quienes somos?</a>
-            <a href="./Reportes.html">¿Que hacemos?</a>
+            <a href="./Quienes_somos.html">¿Quiénes somos?</a>
+            <a href="./Reportes.html">¿Qué hacemos?</a>
             <a href="./info_datos.html">Datos</a>
             <a href="./normatividad.html">Normatividad</a>
           </div>
@@ -89,20 +91,20 @@
 
     <div class="main__container"> 
       <h1 class="main__container__title">Denuncie</h1>
-  </div>
+     </div>
 
     <section class="login" style="margin-top: 50px;">
         <section class="login__container">
             <h2>Diligencia el reporte de corrupción</h2>
-            <form class="login__container--form">
-                <input class="input" type="text" placeholder="Nombre / Entidad">
-                <input class="input" type="text" placeholder="Departamento">
-                <input class="input" type="text" placeholder="Municipio">
-                <input class="input" type="text" placeholder="Asunto">
-                <input class="input" type="text" placeholder="Implicados">
-                <textarea class="input_box" placeholder="Descripción hechos"></textarea>
-                <input class="inputFile" type="file" name="uploaded_file" id="uploaded_file" multiple>
-                <button type="button" class="button">Enviar</button>
+            <form class="login__container--form" id="complaintform">
+                <input class="input" id="nameForm" type="text" placeholder="Nombre / Entidad">
+                <input class="input" id="departmentForm" type="text" placeholder="Departamento">
+                <input class="input" id="municipalityForm" type="text" placeholder="Municipio">
+                <input class="input" id="titleForm" type="text" placeholder="Asunto">
+                <input class="input" id="involvedForm" type="text" placeholder="Implicados">
+                <textarea class="input_box" id="factsForm" placeholder="Descripción hechos"></textarea>
+                <input class="inputFile" type="file" name="uploaded_fileForm" id="uploaded_fileForm" multiple>
+                <button type="button" id="buttonForm" class="button">Enviar</button>
             </form>
         </section>
         <section class="login__container_text">
@@ -119,6 +121,7 @@
     <footer class="footer">
         <img src="./images/footer-PACO.png" alt="footer PACO" width="100%">
     </footer>
+    <script src="./js/formularioDenuncia.js" charset="UTF-8"></script>
     <script>
       window.onscroll = function() {myFunction()};
 

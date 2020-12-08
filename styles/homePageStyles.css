@@ -126,3 +126,8 @@ a:link {
 .footer {
     margin-top: 0%;
 }
+
+.footerImages a{
+    display:block;
+    width:20%;
+}

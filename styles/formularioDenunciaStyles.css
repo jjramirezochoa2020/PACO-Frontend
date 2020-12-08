@@ -151,6 +151,12 @@ body {
     height: 50px;
     letter-spacing: 1px;
     margin-top: 80px;
+    outline: none;
+}
+
+.button:hover {
+    background: #51adcf radial-gradient(circle, transparent 1%, #3282b8 1%) center/15000%;
+    outline: none;
 }
 
 .footer {
