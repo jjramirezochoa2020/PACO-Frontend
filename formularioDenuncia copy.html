@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="./images/fav.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/formularioDenunciaStyles.css">
     <link rel="stylesheet" href="./styles/menuStyles.css">
@@ -95,7 +97,7 @@
         <section class="login__container">
             <h2>Diligencia el reporte de corrupción</h2>
             <form class="login__container--form">
-                <input class="input" type="text" placeholder="Nombre / Entidad">
+                <input class="input" id="name" type="text" placeholder="Nombre / Entidad">
                 <input class="input" type="text" placeholder="Departamento">
                 <input class="input" type="text" placeholder="Municipio">
                 <input class="input" type="text" placeholder="Asunto">
@@ -105,20 +107,11 @@
                 <button type="button" class="button">Enviar</button>
             </form>
         </section>
-        <section class="login__container_text">
-          <p>De acuerdo con el Literal 14° del Artículo 13° del Decreto 1784 de 2019, la Secretaría de Transparencia tiene entre sus funciones “Denunciar directamente o dar traslado a los entes de control y a la Fiscalía General de la Nación de presuntos delitos contra la administración pública, contra el orden económico y social, o contra el patrimonio económico, así como de posibles infracciones disciplinarias, que por su gravedad sean puestas en su conocimiento, así como las denuncias interpuestas directamente por veedores ciudadanos y la ciudadanía en general”.</p>
-          <p>Por lo anterior, la Secretaría de Transparencia, a través de PACO, pone a disposición de los colombianos este canal seguro para que los colombianos hagan llegar la información relacionada con los posibles hechos de corrupción de los que tenga conocimiento, con el nivel de detalle que consideren.</p>
-          <p>Tenga en cuenta las siguientes claves o tips para realizar un reporte efectivo sobre posibles hechos de corrupción: </p>
-          <ul>
-            <li>PACO garantiza total reserva de los datos o información personal del remitente, reportante o peticionario. No obstante, lo anterior, el reporte también puede ser forma anónima.</li>
-            <li>Entre más consistente sea su reporte por posibles hechos de corrupción, más efectivo será su análisis y trámite. En ese sentido, si puede relacionar además de los hechos, a los implicados en el caso, ayudaría en el proceso.</li>
-            <li>Si su reporte cuenta con anexos o documentos que entreguen más detalle sobre el caso, por favor adjúntelos. Estos soportes pueden ser archivos, enlaces o imágenes.</li>
-          </ul>
-        </section>
     </section>
     <footer class="footer">
         <img src="./images/footer-PACO.png" alt="footer PACO" width="100%">
     </footer>
+    <script src="./js/formularioDenuncia.js"></script>
     <script>
       window.onscroll = function() {myFunction()};
 
