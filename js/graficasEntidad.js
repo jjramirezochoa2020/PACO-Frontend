@@ -3,21 +3,21 @@ var nameEntity = "";
 nameEntity = nameEntity.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/entities/',
-    targetUrlSECOP = 'https://api-paco.azure-api.net/fa-query-paco/secop/database/entities/',
-    targetUrlStateSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts/entities/",
-    targetUrlStateSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts/entities/",
-    targetUrlTypeProcessSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/process_type/entities/",
-    targetUrlTypeProcessSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/process_type/entities/",
-    targeuUrlTypeContractsSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/entities/",
-    targeuUrlTypeContractsSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/entities/",
-    targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month/entities/"
+    targetUrlGlobalNumber = ' https://paco-api-prod.azure-api.net/paco/secop/entities/',
+    targetUrlSECOP = ' https://paco-api-prod.azure-api.net/paco/secop/database/entities/',
+    targetUrlStateSECOPI = " https://paco-api-prod.azure-api.net/paco/secop/status_contracts/entities/",
+    targetUrlStateSECOPII = " https://paco-api-prod.azure-api.net/paco/secop/status_contracts/entities/",
+    targetUrlTypeProcessSECOPI = " https://paco-api-prod.azure-api.net/paco/secop/process_type/entities/",
+    targetUrlTypeProcessSECOPII = " https://paco-api-prod.azure-api.net/paco/secop/process_type/entities/",
+    targeuUrlTypeContractsSECOPI = " https://paco-api-prod.azure-api.net/paco/secop/contract_type/entities/",
+    targeuUrlTypeContractsSECOPII = " https://paco-api-prod.azure-api.net/paco/secop/contract_type/entities/",
+    targetUrlMonthlyCount = " https://paco-api-prod.azure-api.net/paco/secop/contracts/year_month/entities/"
 
-    targetUrlContracts = 'https://api-paco.azure-api.net/fa-query-paco/secop/contract/entities/',
+    targetUrlContracts = ' https://paco-api-prod.azure-api.net/paco/secop/contract/entities/',
     endUrlContracts = '?limit=5',
-    targetUrlCountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/entities/',
+    targetUrlCountContractors = ' https://paco-api-prod.azure-api.net/paco/secop/contractors/entities/',
     endUrlCountContractors = '?limit=5&sort=count&order=desc',
-    targetUrlAmountContractors = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/entities/',
+    targetUrlAmountContractors = ' https://paco-api-prod.azure-api.net/paco/secop/contractors/entities/',
     endUrlAmountContractors = '?limit=5&sort=total&order=desc',
 
 
