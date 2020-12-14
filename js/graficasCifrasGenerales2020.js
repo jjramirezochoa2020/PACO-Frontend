@@ -46,6 +46,31 @@ var formatter = new Intl.NumberFormat('en-US', {
   maximumFractionDigits: 0,
 });
 
+function numberFormat(x) {
+  var i;
+  var partialString = "";
+  len = String(x).length;
+  for (i=1; i<=len; i++) {
+    if ((i-1)%3 == 0) {
+      if (i == 1) {
+        partialString = String(x)[len-i]
+      }
+      else {
+        partialString = String(x)[len-i]+"."+partialString;
+      }
+    }
+    else {
+      partialString = String(x)[len-i]+partialString;
+    }
+  }
+  return partialString;
+}
+
+function moneyFormat(x) {
+  return "$ "+String((x/1000000000000).toFixed(1)) + " Billones";
+}
+
+
 Morris.Area.prototype.fillForSeries = function(i)  {
   var color;
   return "10-#c4e7f2-#ffffff";
@@ -58,7 +83,7 @@ Morris.Area.prototype.fillForSeries = function(i)  {
       {value: 0, label: 'SECOP II'},
     ],
     colors: ['#7a67d7', '#d9def9'],
-    formatter: function (x) { return x}
+    formatter: function (x) { return numberFormat(x) }
   }).on('click', function(i, row){
     console.log(i, row);
   });
@@ -73,7 +98,7 @@ Morris.Area.prototype.fillForSeries = function(i)  {
       {value: 0, label: 'Cancelado'},
     ],
     colors: ['#00aed1', '#45d9f0', '#79e1f1', '#a1ecfa'],
-    formatter: function (x) { return x}
+    formatter: function (x) { return numberFormat(x) }
   }).on('click', function(i, row){
     console.log(i, row);
   });
@@ -88,7 +113,7 @@ Morris.Area.prototype.fillForSeries = function(i)  {
       {value: 0, label: 'Cancelado'},
     ],
     colors: ['#3866d6', '#477be6', '#5e94f8', '#77baff', '#9dcefd'],
-    formatter: function (x) { return x}
+    formatter: function (x) { return numberFormat(x)}
   }).on('click', function(i, row){
     console.log(i, row);
   });
@@ -127,30 +152,6 @@ Morris.Area.prototype.fillForSeries = function(i)  {
     },
     smooth: false,
   });
-
-  function numberFormat(x) {
-    var i;
-    var partialString = "";
-    len = String(x).length;
-    for (i=1; i<=len; i++) {
-      if ((i-1)%3 == 0) {
-        if (i == 1) {
-          partialString = String(x)[len-i]
-        }
-        else {
-          partialString = String(x)[len-i]+"."+partialString;
-        }
-      }
-      else {
-        partialString = String(x)[len-i]+partialString;
-      }
-    }
-    return partialString;
-  }
-
-  function moneyFormat(x) {
-    return "$ "+String((x/1000000000000).toFixed(1)) + " Billones";
-  }
 
   query = targetUrlGlobalNumber + "?start_year=2020";
   fetch(query)
