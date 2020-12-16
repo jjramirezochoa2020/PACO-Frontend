@@ -6,13 +6,13 @@ document.getElementById('SECOPPenalties').innerHTML = String(initialValue);
 document.getElementById('fiscalResponsabilities').innerHTML = String(initialValue);
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop',
-    targetUrlSECOP = 'https://api-paco.azure-api.net/fa-query-paco/secop/database',
-    targetUrlStateSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts",
-    targetUrlStateSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts",
-    targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month",
+    targetUrlGlobalNumber = 'https://paco-api-prod.azure-api.net/paco/secop',
+    targetUrlSECOP = 'https://paco-api-prod.azure-api.net/paco/secop/database',
+    targetUrlStateSECOPI = 'https://paco-api-prod.azure-api.net/paco/secop/status_contracts',
+    targetUrlStateSECOPII = 'https://paco-api-prod.azure-api.net/paco/secop/status_contracts',
+    targetUrlMonthlyCount = 'https://paco-api-prod.azure-api.net/paco/secop/contracts/year_month',
 
-    targetUrlGeneralComplaints = 'https://api-paco.azure-api.net/fa-query-paco/general/count'
+    targetUrlGeneralComplaints = 'https://paco-api-prod.azure-api.net/paco/general/count'
 
 var months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
 
