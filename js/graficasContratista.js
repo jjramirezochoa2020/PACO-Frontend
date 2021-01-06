@@ -9,26 +9,26 @@ document.getElementById('fiscalResponsabilities').innerHTML = String(initialValu
 IDContractor = IDContractor.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
 
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrlGlobalNumber = 'https://api-paco.azure-api.net/fa-query-paco/secop/contractors/',
-    targetUrlSECOP = 'https://api-paco.azure-api.net/fa-query-paco/secop/database/contractors/',
-    targetUrlStateSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts/contractors/",
-    targetUrlStateSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/status_contracts/contractors/",
-    targetUrlTypeProcessSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/process_type/contractors/",
-    targetUrlTypeProcessSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/process_type/contractors/",
-    targeuUrlTypeContractsSECOPI = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/contractors/",
-    targeuUrlTypeContractsSECOPII = "https://api-paco.azure-api.net/fa-query-paco/secop/contract_type/contractors/",
-    targetUrlMonthlyCount = "https://api-paco.azure-api.net/fa-query-paco/secop/contracts/year_month/contractors/"
+    targetUrlGlobalNumber = ' https://paco-api-prod.azure-api.net/paco/secop/contractors/',
+    targetUrlSECOP = ' https://paco-api-prod.azure-api.net/paco/secop/database/contractors/',
+    targetUrlStateSECOPI = " https://paco-api-prod.azure-api.net/paco/secop/status_contracts/contractors/",
+    targetUrlStateSECOPII = " https://paco-api-prod.azure-api.net/paco/secop/status_contracts/contractors/",
+    targetUrlTypeProcessSECOPI = " https://paco-api-prod.azure-api.net/paco/secop/process_type/contractors/",
+    targetUrlTypeProcessSECOPII = " https://paco-api-prod.azure-api.net/paco/secop/process_type/contractors/",
+    targeuUrlTypeContractsSECOPI = " https://paco-api-prod.azure-api.net/paco/secop/contract_type/contractors/",
+    targeuUrlTypeContractsSECOPII = " https://paco-api-prod.azure-api.net/paco/secop/contract_type/contractors/",
+    targetUrlMonthlyCount = " https://paco-api-prod.azure-api.net/paco/secop/contracts/year_month/contractors/"
 
-    targetUrlProcuraduria = 'https://api-paco.azure-api.net/fa-query-paco/siri/sanctions/contractors/',
-    targetUrlCollusions = "https://api-paco.azure-api.net/fa-query-paco/sic/collusions/contractors/",
-    targetUrlSECOPPenalties = "https://api-paco.azure-api.net/fa-query-paco/secop/penalty/contractors/",
-    targetUrlFiscalResponsabilities = 'https://api-paco.azure-api.net/fa-query-paco/fiscal/contractors/',
+    targetUrlProcuraduria = ' https://paco-api-prod.azure-api.net/paco/siri/sanctions/contractors/',
+    targetUrlCollusions = " https://paco-api-prod.azure-api.net/paco/sic/collusions/contractors/",
+    targetUrlSECOPPenalties = " https://paco-api-prod.azure-api.net/paco/secop/penalty/contractors/",
+    targetUrlFiscalResponsabilities = ' https://paco-api-prod.azure-api.net/paco/fiscal/contractors/',
 
-    targetUrlContracts = 'https://api-paco.azure-api.net/fa-query-paco/secop/contract/contractors/',
-    targetUrlCountEntities = 'https://api-paco.azure-api.net/fa-query-paco/secop/entities/contractors/',
-    targetUrlCountCities = 'https://api-paco.azure-api.net/fa-query-paco/secop/municipalities/contractors/',
+    targetUrlContracts = ' https://paco-api-prod.azure-api.net/paco/secop/contract/contractors/',
+    targetUrlCountEntities = ' https://paco-api-prod.azure-api.net/paco/secop/entities/contractors/',
+    targetUrlCountCities = ' https://paco-api-prod.azure-api.net/paco/secop/municipalities/contractors/',
     
-    targetUrlContractorName = 'https://api-paco.azure-api.net/fa-query-paco/secop/list_contractors/'
+    targetUrlContractorName = ' https://paco-api-prod.azure-api.net/paco/secop/list_contractors/'
 
 
 function updateUrl(targetUrl, filter, endUrl) {
